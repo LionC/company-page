@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    font-family: Lato;
+    font-weight: 300;
+}
+
+body {
+
+}
+
+header {
+    background-image: url("/assets/images/dummyheader.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+
+    text-align: center;
+    color: white;
+}
+
+header > div.container {
+    padding: 200px 0 200px 0;
+}
+
+header h1 {
+    font-size: 70px;
+}
+
+footer {
+    background-color: #f0f0f0;
+    min-height: 55px;
+}
+
+section {
+    min-height: 400px;
+}
+
+section:nth-child(odd) {
+    background-color: #f0f0f0;
+}
