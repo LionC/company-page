@@ -21,9 +21,9 @@ a, a:hover, a:active {
 * Typography
 */
 
-html {
+html, body {
     line-height: 1.43;
-    font-size: 14px;
+    font-size: 17px;
 
     font-family: Lato;
     font-weight: 300;
@@ -33,6 +33,39 @@ html {
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
     font-weight: 500;
+}
+
+h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.15rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: .85rem;
+}
+
+p {
+    margin-bottom: 10px;
 }
 
 /*
@@ -153,7 +186,7 @@ footer {
 main section {
     display: flex;
     align-items: center;
-    font-size: 1.4rem;
+    /*font-size: 1.4rem;*/
 
     padding-right: calc(50% - 485px);
     padding-left: calc(50% - 485px);
@@ -166,17 +199,24 @@ main section:nth-child(odd) {
     color: white;
 }
 
-section.img-text-pair, section.gallery {
+section.img-text-pair, section.gallery, section.product {
     display: flex;
     align-items: center;
+
+}
+section.img-text-pair, section.gallery {
     justify-content: space-between;
 }
 
-section.img-text-pair > img {
+section.product {
+    justify-content: space-around;
+}
+
+section.img-text-pair > img, section.product > img {
     height: 300px;
 }
 
-section.img-text-pair > :first-child {
+section.img-text-pair > :first-child, section.product > :first-child {
     padding-right: 30px;
 }
 
@@ -186,5 +226,16 @@ section.gallery > img {
 }
 
 section.gallery {
+    flex-wrap: wrap;
+}
+
+section.product > h1 {
+    flex-basis: 100%;
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+section.product {
     flex-wrap: wrap;
 }
