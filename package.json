@@ -1,0 +1,24 @@
+{
+  "name": "company-page",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Acomodeo/company-page.git"
+  },
+  "author": "Leon Strauss <leon.strauss@acomodeo.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Acomodeo/company-page/issues"
+  },
+  "homepage": "https://github.com/Acomodeo/company-page#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0"
+  }
+}

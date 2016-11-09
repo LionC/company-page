@@ -1,12 +1,43 @@
+/*
+* Resets
+*/
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a, a:hover, a:active {
+    text-decoration: underline;
+    color: inherit;
+}
+
+/*
+* Typography
+*/
+
+html {
+    line-height: 1.43;
+    font-size: 14px;
 
     font-family: Lato;
     font-weight: 300;
-    color: #333328
+    color: #333328;
 }
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+/*
+* Navigation
+*/
 
 nav {
     transition: color .2s ease-in, background-color .2s ease-in, border-color .2s ease-in;
@@ -44,13 +75,12 @@ nav.scrolled > img {
 }
 
 nav > div.nav-links {
+    width: 800px;
+
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-left: 40%;
-    padding-right: 10%;
-
-    flex-grow: 1;
+    padding-right: 50px;
 }
 
 nav > .nav-links > a {
@@ -68,25 +98,24 @@ nav > .nav-links > a:nth-child(5n).active, nav > .nav-links > a:nth-child(5n):ho
 }
 
 nav > .nav-links > a:nth-child(5n+1).active, nav > .nav-links > a:nth-child(5n+1):hover {
-    color: #f9b000;
-}
-
-nav > .nav-links > a:nth-child(5n+2).active, nav > .nav-links > a:nth-child(5n+2):hover {
     color: #ee754d;
 }
 
-nav > .nav-links > a:nth-child(5n+3).active, nav > .nav-links > a:nth-child(5n+3):hover {
+nav > .nav-links > a:nth-child(5n+2).active, nav > .nav-links > a:nth-child(5n+2):hover {
     color: #7ac6b8;
+}
+
+nav > .nav-links > a:nth-child(5n+3).active, nav > .nav-links > a:nth-child(5n+3):hover {
+    color: #f9b000;
 }
 
 nav > .nav-links > a:nth-child(5n+4).active, nav > .nav-links > a:nth-child(5n+4):hover {
     color: #3dacbe;
 }
 
-a, a:hover, a:active {
-    text-decoration: underline;
-    color: inherit;
-}
+/*
+* Header
+*/
 
 header {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('/assets/images/dummyheader.jpeg');
@@ -108,15 +137,23 @@ header h1 {
     font-weight: 300;
 }
 
+/*
+* Footer
+*/
+
 footer {
     background-color: #f0f0f0;
     min-height: 55px;
 }
 
+/*
+* Content
+*/
+
 main section {
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.4rem;
 
     padding-right: calc(50% - 485px);
     padding-left: calc(50% - 485px);
@@ -129,7 +166,7 @@ main section:nth-child(odd) {
     color: white;
 }
 
-section.img-text-pair {
+section.img-text-pair, section.gallery {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -141,4 +178,13 @@ section.img-text-pair > img {
 
 section.img-text-pair > :first-child {
     padding-right: 30px;
+}
+
+section.gallery > img {
+    width: 280px;
+    padding-top: 15px;
+}
+
+section.gallery {
+    flex-wrap: wrap;
 }
