@@ -69,6 +69,18 @@ p {
 }
 
 /*
+* Images
+*/
+
+img {
+    vertical-align: middle;
+}
+
+img.circle {
+    border-radius: 50%;
+}
+
+/*
 * Navigation
 */
 
@@ -186,7 +198,7 @@ footer {
 main section {
     display: flex;
     align-items: center;
-    /*font-size: 1.4rem;*/
+    justify-content: space-between;
 
     padding-right: calc(50% - 485px);
     padding-left: calc(50% - 485px);
@@ -194,18 +206,9 @@ main section {
     padding-bottom: 45px;
 }
 
-main section:nth-child(odd) {
+main section:nth-child(even) {
     background-color: #958ca0; /* bcb7c4 */
     color: white;
-}
-
-section.img-text-pair, section.gallery, section.product {
-    display: flex;
-    align-items: center;
-
-}
-section.img-text-pair, section.gallery {
-    justify-content: space-between;
 }
 
 section.product {
@@ -225,7 +228,7 @@ section.gallery > img {
     padding-top: 15px;
 }
 
-section.gallery {
+section.gallery, section.team {
     flex-wrap: wrap;
 }
 
@@ -238,4 +241,55 @@ section.product > h1 {
 
 section.product {
     flex-wrap: wrap;
+}
+
+section.team {
+    text-align: center;
+}
+
+section.team > div {
+    width: 224px;
+}
+
+section.team > h1 {
+    flex-basis: 100%;
+    margin-top: 0;
+}
+
+section.team > div {
+    margin-top: 22px;
+}
+
+section.team > div > img {
+    border-radius: 50%;
+    width: 70%;
+}
+
+section.team > div > h4 {
+    margin: 15px 0 0 0;
+}
+
+section.team > div > p, section.team > div > h4 {
+    white-space: nowrap;
+}
+
+section.team > div > p {
+    margin: 7px 0 0 0;
+}
+
+section.blog-preview {
+    flex-direction: column;
+}
+
+section.blog-preview > h1 {
+    margin-top: 0;
+    text-align: center;
+}
+
+section.blog-preview > a, section.blog-preview > a:hover, section.blog-preview > a:active {
+    text-decoration: none;
+}
+
+section.blog-preview div {
+    width: 550px;
 }

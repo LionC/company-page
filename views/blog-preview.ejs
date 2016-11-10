@@ -1,0 +1,9 @@
+<section class="blog-preview">
+    <h1>Blog</h1>
+    <% for(var i = 0; i < blog.length; i++) { var act = blog[i]; %>
+    <a href="//google.com"><div>
+        <h2><%= act.getText('blog-post.title-' + lang) %></h2>
+        <p><%= act.getStructuredText('blog-post.lead-' + lang).asText() %></p>
+    </div></a>
+    <% } %>
+</section>

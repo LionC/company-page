@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <base href="/">
-
     <title>Acomodeo</title>
 
     <!-- TODO Favicon -->
@@ -16,20 +14,20 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
 
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
 
     <nav>
-        <img src="assets/images/logo.png">
+        <img src="/assets/images/logo.png">
 
         <div class="nav-links">
-            <a class="active" href="//google.com">About Us</a>
-            <a href="//google.com">Products</a>
-            <a href="//google.com">For Operators</a>
-            <a href="//google.com">For Customers</a>
-            <a href="//google.com">Ask</a>
+            <a <% if(page == 'aboutus') { %>class="active" <% } %>href="aboutus">About Us</a>
+            <a <% if(page == 'products') { %>class="active" <% } %>href="products">Products</a>
+            <a <% if(page == 'operators') { %>class="active" <% } %>href="operators">For Operators</a>
+            <a <% if(page == 'customers') { %>class="active" <% } %>href="customers">For Customers</a>
+            <a <% if(page == 'ask') { %>class="active" <% } %>href="/ask">Ask</a>
         </div>
     </nav>
 
@@ -42,55 +40,7 @@
     </header>
 
     <main>
-
-        <section class="product">
-            <h1>AMS</h1>
-            <img src="assets/images/random3.jpeg">
-            <div>
-                <ul>
-                    <li>Cloud based Apartment Management System</li>
-                    <li>Integrated CRM System</li>
-                    <li>Supports degressive pricing for longstay</li>
-                    <li>Get full access on customer information</li>
-                </ul>
-                <ul>
-                    <li>Cloud based Apartment Management System</li>
-                    <li>Integrated CRM System</li>
-                    <li>Supports degressive pricing for longstay</li>
-                    <li>Get full access on customer information</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="img-text-pair">
-            <div>
-                <h2>Some Heading</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-            <img src="assets/images/random2.jpeg">
-        </section>
-
-        <section class="gallery">
-            <img src="assets/images/random2.jpeg">
-            <img src="assets/images/random2.jpeg">
-            <img src="assets/images/random2.jpeg">
-            <img src="assets/images/random2.jpeg">
-            <img src="assets/images/random2.jpeg">
-            <img src="assets/images/random2.jpeg">
-        </section>
-
-        <section class="img-text-pair">
-            <img src="assets/images/random.jpeg">
-            <div>
-                <h2>Some Heading</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-            </div>
-        </section>
-
+        <%- include(page); %>
     </main>
 
     <footer>

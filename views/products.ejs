@@ -1,0 +1,9 @@
+<% for(var i = 0; i < products.length; i++) { var act = products[i]; %>
+<section class="product">
+    <h1><%= act.getText('product.title-' + lang) %></h1>
+    <img src="<%= act.getImage('product.image').url %>">
+    <div>
+        <%- act.getStructuredText('product.description-' + lang).asHtml() %>
+    </div>
+</section>
+<% } %>

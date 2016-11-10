@@ -1,0 +1,18 @@
+<section class="team">
+    <h1>Team</h1>
+<% for(var i = 0; i < team.length; i++) { var act = team[i]; %>
+    <div>
+        <img src="<%= act.getImage('team-member.image').url %>">
+        <h4><%= act.getText('team-member.name') %></h4>
+        <p><%= act.getText('team-member.jobTitle') %></p>
+    </div>
+
+<% } %>
+
+    <div>
+        <img src="http://trafficmillionairesummit.com/event/wp-content/uploads/2016/02/mr-X.jpeg">
+        <h4><%= lang == 'en' ? 'You?' : 'Du?' %></h4>
+        <p><%= lang == 'en' ? 'Who knows ;-)' : 'Wer weiß ;-)' %></p>
+    </div>
+
+</section>
