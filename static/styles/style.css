@@ -23,11 +23,16 @@ a, a:hover, a:active {
 
 html, body {
     line-height: 1.43;
-    font-size: 17px;
-
+    font-size: 19px;
     font-family: Lato;
     font-weight: 300;
     color: #333328;
+}
+
+@media only screen and (min-width : 970px) {
+    html, body {
+        font-size: 17px;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -120,13 +125,7 @@ nav.scrolled > img {
 }
 
 nav > .nav-links {
-    width: 800px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-right: 50px;
-    margin-left: auto;
+    display: none; //TODO: Mobile Nav
 }
 
 nav > .nav-links > a {
@@ -137,6 +136,18 @@ nav > .nav-links > a {
     text-transform: uppercase;
     font-weight: 400;
     font-size: 20px;
+}
+
+@media only screen and (min-width : 970px) {
+    nav > .nav-links {
+        width: 800px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 50px;
+        margin-left: auto;
+    }
 }
 
 nav > .nav-links > a:nth-child(5n).active, nav > .nav-links > a:nth-child(5n):hover {
@@ -182,9 +193,15 @@ header > div.container {
     padding: 200px 0 200px 0;
 }
 
-header h1 {
-    font-size: 70px;
+header {
+    font-size: 24px;
     font-weight: 300;
+}
+
+@media only screen and (min-width : 970px) {
+    header {
+        font-size: 28px;
+    }
 }
 
 /*
@@ -202,13 +219,25 @@ footer {
 
 main section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
-    padding-right: calc(50% - 485px);
-    padding-left: calc(50% - 485px);
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+@media only screen and (min-width : 970px) {
+    main section {
+        flex-direction: row;
+
+        padding-right: calc(50% - 485px);
+        padding-left: calc(50% - 485px);
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
 }
 
 main section:nth-child(even) {
@@ -221,16 +250,28 @@ section.product {
 }
 
 section.img-text-pair > img, section.product > img {
-    height: 300px;
+    width: 100%;
 }
 
-section.img-text-pair > :first-child, section.product > :first-child {
-    padding-right: 30px;
+@media only screen and (min-width : 970px) {
+    section.img-text-pair > img, section.product > img {
+        height: 300px;
+    }
+
+    section.img-text-pair > :first-child, section.product > :first-child {
+        padding-right: 30px;
+    }
 }
 
 section.gallery > img {
-    width: 280px;
+    width: 100%;
     padding-top: 15px;
+}
+
+@media only screen and (min-width : 970px) {
+    section.gallery > img {
+        width: 280px;
+    }
 }
 
 section.gallery, section.team {
@@ -252,8 +293,10 @@ section.team {
     text-align: center;
 }
 
-section.team > div {
-    width: 224px;
+@media only screen and (min-width : 970px) {
+    section.team > div {
+        width: 224px;
+    }
 }
 
 section.team > h1 {
@@ -301,18 +344,24 @@ section.blog-preview > a, section.blog-preview > a:hover, section.blog-preview >
     text-decoration: none;
 }
 
-section.blog-preview div {
-    max-width: 550px;
+@media only screen and (min-width : 970px) {
+    section.blog-preview div {
+        max-width: 550px;
+    }
 }
 
 section.blog-post {
     display: block;
 
-    padding-right: calc(50% - 320px);
-    padding-left: calc(50% - 320px);
-
     font-size: 1.2em;
     line-height: 1.5;
+}
+
+@media only screen and (min-width : 970px) {
+    section.blog-post {
+        padding-right: calc(50% - 320px);
+        padding-left: calc(50% - 320px);
+    }
 }
 
 section.blog-post figure figcaption {
@@ -323,8 +372,6 @@ section.blog-post figure figcaption {
 section.blog-post figure figcaption > :first-child {
     margin-top:5px;
 }
-
-
 
 .blog-lead {
     font-size: 1.15em;
