@@ -1,0 +1,15 @@
+<%
+for(var i = 0; i < slices.length; i++) {
+    var slice = slices[i];
+
+    switch(slice.sliceType) {
+        case 'imageTextPair':
+            var sliceGroup = slice.value.toArray()[0];
+            var image = sliceGroup.getImage('image');
+            var content = sliceGroup.getStructuredText('content-' + lang);
+            %><%- include('image-content-pair', { image: image, content: content }); %><%
+            break;
+        default:
+            %><%- include(slice.sliceType); %><%
+    }
+} %>

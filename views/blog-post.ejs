@@ -1,0 +1,34 @@
+<section class="blog-post">
+    <h1><%= blogPost.getText('blog-post.title-' + lang) %></h1>
+
+    <div class="blog-lead">
+        <%- blogPost.getStructuredText('blog-post.lead-' + lang).asHtml() %>
+    </div>
+
+    <article>
+    <%
+        var slices = blogPost.getSliceZone('blog-post.body-' + lang).slices;
+        for(var i = 0; i < slices.length; i++) {
+            var slice = slices[i];
+
+            switch(slice.sliceType) {
+                case 'text':%>
+                    <%- slice.value.asHtml() %>
+                    <%
+                    break;
+                case 'image-with-caption':
+                    var fragments = slice.value.toArray()[0].fragments;%>
+                    <figure>
+                        <img src="<%= fragments.image.url %>">
+                        <% if(fragments.caption) { %>
+                        <figcaption><%- fragments.caption.asHtml() %></figcaption>
+                        <% } %>
+                    </figure>
+                    <%
+                    break;
+            }
+        }
+    %>
+    </article>
+
+</section>

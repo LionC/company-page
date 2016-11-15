@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= lang %>">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title>Acomodeo</title>
+    <meta name="description" content="<%= page.getGroup('page.description').toArray()[0].getText(lang) %>">
+    <meta name="keywords" content="<%= page.getGroup('page.keywords').toArray()[0].getText(lang) %>">
+
+    <title><%= page.getGroup('page.title').toArray()[0].getText(lang) %></title>
 
     <!-- TODO Favicon -->
 
@@ -23,24 +26,60 @@
         <img src="/assets/images/logo.png">
 
         <div class="nav-links">
-            <a <% if(page == 'aboutus') { %>class="active" <% } %>href="aboutus">About Us</a>
-            <a <% if(page == 'products') { %>class="active" <% } %>href="products">Products</a>
-            <a <% if(page == 'operators') { %>class="active" <% } %>href="operators">For Operators</a>
-            <a <% if(page == 'customers') { %>class="active" <% } %>href="customers">For Customers</a>
-            <a <% if(page == 'ask') { %>class="active" <% } %>href="/ask">Ask</a>
+            <%
+            for(var i = 0; i < pages.length; i++) {
+                var p = pages[i];%>
+                <a <% if(page.uid == p.uid) { %>class="active" <% } %>href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %></a>
+                <%
+            }
+            %>
+        </div>
+        <div class="language-links">
+            <a href="<%= languageLinks['en'] %>" <% if(lang == 'en') { %>class="active" <% } %>><%= lang == 'en' ? 'english' : 'englisch' %></a> /
+            <a href="<%= languageLinks['de'] %>" <% if(lang == 'de') { %>class="active" <% } %>><%= lang == 'en' ? 'german' : 'deutsch' %></a>
         </div>
     </nav>
 
+    <style>
+        header {
+            background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) ), url('<%= page.getImage('page.headerImage').url %>');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-size: cover;
+        }
+    </style>
     <header>
         <div class="container">
             <div class="header-text-container">
-                <h1>the world of serviced apartments</h1>
+                <%- page.getGroup('page.headerText').toArray()[0].getStructuredText(lang).asHtml() %>
             </div>
         </div>
     </header>
 
     <main>
-        <%- include(page); %>
+        <%
+        if(template) {
+            %><%- include(template); %><%
+        } else {
+            var slices = page.getSliceZone('page.body').slices;
+
+            for(var i = 0; i < slices.length; i++) {
+                var slice = slices[i];
+
+                switch(slice.sliceType) {
+                    case 'imageTextPair':
+                    var sliceGroup = slice.value.toArray()[0];
+                    var image = sliceGroup.getImage('image');
+                    var content = sliceGroup.getStructuredText('content-' + lang);
+                    %><%- include('image-content-pair', { image: image, content: content }); %><%
+                    break;
+                    default:
+                    %><%- include(slice.sliceType); %><%
+                }
+            }
+        }
+        %>
     </main>
 
     <footer>

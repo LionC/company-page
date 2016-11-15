@@ -5,13 +5,15 @@ const util = require('util')
 var exp = {
     products: [],
     team: [],
-    blog: []
+    blog: [],
+    pages: []
 };
 
 const typeMap = {
     'team-member': 'team',
     'product': 'products',
-    'blog-post': 'blog'
+    'blog-post': 'blog',
+    'page': 'pages'
 };
 
 exp.ready = Prismic.api("https://aco-company-page.prismic.io/api").then(function(api) {
