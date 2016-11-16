@@ -23,6 +23,7 @@ app.get('/:lang/blog/:uid', function (req, res) {
         return res.status(404).send();
 
     return render(req, res, {
+        headTemplate: 'blog-post-head',
         template: 'blog-post',
         blogPost: blogPost
     });
@@ -37,6 +38,8 @@ function renderPage(req, res) {
         return res.status(404).send();
 
     return render(req, res, {
+        headTemplate: 'page-head',
+        template: 'page',
         page: page
     });
 }
@@ -45,8 +48,6 @@ function render(req, res, params) {
     params = params || {};
 
     var defaultParams = {
-        template: false,
-
         lang: req.params.lang,
 
         products: prismicData.products,

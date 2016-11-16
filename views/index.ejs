@@ -6,14 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <meta name="description" content="<%= page.getGroup('page.description').toArray()[0].getText(lang) %>">
-    <meta name="keywords" content="<%= page.getGroup('page.keywords').toArray()[0].getText(lang) %>">
-
-    <title><%= page.getGroup('page.title').toArray()[0].getText(lang) %></title>
+    <%- include(headTemplate); %>
 
     <!-- TODO Favicon -->
-
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
 
@@ -29,7 +24,12 @@
             <%
             for(var i = 0; i < pages.length; i++) {
                 var p = pages[i];%>
-                <a <% if(page.uid == p.uid) { %>class="active" <% } %>href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %></a>
+                <a
+                    <% if((template == 'blog-post') ?  (p.uid == 'blog') : (page.uid == p.uid)) { %>
+                        class="active"
+                    <% } %>
+                    href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
+                </a>
                 <%
             }
             %>
@@ -42,44 +42,26 @@
 
     <style>
         header {
-            background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) ), url('<%= page.getImage('page.headerImage').url %>');
+            background: linear-gradient( rgba(0, 0, 0, .5), rgba(0, 0, 0, .5) ), url("<%= template == 'blog-post' ? blogPost.getImage('blog-post.previewImage').url : page.getImage('page.headerImage').url %>");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center center;
             background-size: cover;
         }
     </style>
+
     <header>
         <div class="container">
-            <div class="header-text-container">
+            <% if(template == 'blog-post') { %>
+                <h1>Blog</h1>
+            <% } else { %>
                 <%- page.getGroup('page.headerText').toArray()[0].getStructuredText(lang).asHtml() %>
-            </div>
+            <% } %>
         </div>
     </header>
 
     <main>
-        <%
-        if(template) {
-            %><%- include(template); %><%
-        } else {
-            var slices = page.getSliceZone('page.body').slices;
-
-            for(var i = 0; i < slices.length; i++) {
-                var slice = slices[i];
-
-                switch(slice.sliceType) {
-                    case 'imageTextPair':
-                    var sliceGroup = slice.value.toArray()[0];
-                    var image = sliceGroup.getImage('image');
-                    var content = sliceGroup.getStructuredText('content-' + lang);
-                    %><%- include('image-content-pair', { image: image, content: content }); %><%
-                    break;
-                    default:
-                    %><%- include(slice.sliceType); %><%
-                }
-            }
-        }
-        %>
+        <%- include(template); %>
     </main>
 
     <footer>
