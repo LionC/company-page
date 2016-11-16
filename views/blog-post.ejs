@@ -19,7 +19,7 @@
                 case 'image-with-caption':
                     var fragments = slice.value.toArray()[0].fragments;%>
                     <figure>
-                        <img src="<%= fragments.image.url %>">
+                        <img src="<%= fragments.image.url %>" alt="<%= fragments.image.asText() %>">
                         <% if(fragments.caption) { %>
                         <figcaption><%- fragments.caption.asHtml() %></figcaption>
                         <% } %>

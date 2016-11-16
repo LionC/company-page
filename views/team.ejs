@@ -2,7 +2,7 @@
     <h1>Team</h1>
 <% for(var i = 0; i < team.length; i++) { var act = team[i]; %>
     <div>
-        <img src="<%= act.getImage('team-member.image').url %>">
+        <img src="<%= act.getImage('team-member.image').url %>" alt="<%= act.getText('team-member.name') %>">
         <h4><%= act.getText('team-member.name') %></h4>
         <p><%= act.getText('team-member.jobTitle') %></p>
     </div>

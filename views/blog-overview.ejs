@@ -4,7 +4,7 @@
     <a href="blog/<%= act.uid %>">
         <div>
             <h2><%= act.getText('blog-post.title-' + lang) %></h2>
-            <img src="<%= act.getImage('blog-post.previewImage').url %>">
+            <img src="<%= act.getImage('blog-post.previewImage').url %>" alt="<%= act.getImage('blog-post.previewImage').asText() %>">
             <p><%= act.getStructuredText('blog-post.lead-' + lang).asText() %></p>
         </div>
     </a>
