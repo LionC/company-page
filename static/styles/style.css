@@ -312,7 +312,6 @@ main section {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     padding: 30px 15px;
 }
@@ -337,10 +336,6 @@ section.img-text-pair, section.product {
     justify-content: flex-start;
 }
 
-section.img-text-pair:nth-child(odd), section.product:nth-child(odd) {
-    flex-direction: row-reverse;
-}
-
 section.img-text-pair img, section.product img {
     width: 100%;
 }
@@ -350,6 +345,12 @@ section.img-text-pair img, section.product img {
         width: auto;
         height: 300px;
         padding: 0px 50px;
+
+        flex-direction: column;
+    }
+
+    section.img-text-pair:nth-child(odd), section.product:nth-child(odd) {
+        flex-direction: row-reverse;
     }
 }
 
