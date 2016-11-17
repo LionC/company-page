@@ -100,7 +100,6 @@ nav {
     top: 0;
     width: 100%;
     min-height: 55px;
-    padding: 10px;
 
     color: white;
     background-color: rgba(255,255,255,0);
@@ -111,9 +110,10 @@ nav {
     z-index: 1;
 }
 
-nav > img {
+nav > img, nav > button {
     transition: opacity .2s ease-in;
     opacity: 0;
+    margin: 10px;
 }
 
 nav.scrolled {
@@ -122,11 +122,13 @@ nav.scrolled {
     border-color: rgba(0,0,0,.2);
 }
 
-nav.scrolled > img {
+nav.scrolled > img, nav.scrolled > button {
     opacity: 1;
 }
 
-nav > .nav-links {
+nav .nav-container {
+    flex-grow: 1;
+
     transition: opacity .3s ease-in;
 
     position: absolute;
@@ -143,18 +145,33 @@ nav > .nav-links {
     background-color: #958ca0;
     color: white;
 
-    font-size: 1.8em;
-
     opacity: 0;
     pointer-events: none;
+
+    z-index: 2;
 }
 
-nav > .nav-links.shown {
+nav .nav-links {
+    font-size: 2em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .nav-container.shown {
     opacity: 1;
     pointer-events: all;;
 }
 
-nav > .nav-links > a {
+nav .nav-container button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+nav .nav-links > a {
     display: block;
     color: inherit;
 
@@ -164,54 +181,79 @@ nav > .nav-links > a {
 }
 
 @media only screen and (min-width : 970px) {
-    nav > .nav-links {
+    nav .nav-container {
         position: static;
-        width: 800px;
-        height: auto;
+        height: 100%;
 
         background-color: transparent;
         color: inherit;
 
         flex-direction: row;
-        justify-content: space-around;
-        margin-right: 50px;
-        margin-left: auto;
+        justify-content: flex-start;
 
-        font-size: 1.06em;
+        padding-right: 15px;
 
         opacity: 1;
         pointer-events: all;
     }
+
+    nav .nav-links {
+        flex-direction: row;
+        justify-content: space-around;
+
+        width: 800px;
+
+        margin-left: auto;
+        margin-right: 50px;
+
+        font-size: 1.1em;
+    }
+
+    nav button {
+        display: none;
+    }
 }
 
-nav > .nav-links > a:nth-child(5n).active, nav > .nav-links > a:nth-child(5n):hover {
+nav .nav-links > a:nth-child(5n).active, nav > .nav-links > a:nth-child(5n):hover {
     color: #f6eecd;
 }
 
-nav > .nav-links > a:nth-child(5n+1).active, nav > .nav-links > a:nth-child(5n+1):hover {
+nav .nav-links > a:nth-child(5n+1).active, nav > .nav-links > a:nth-child(5n+1):hover {
     color: #ee754d;
 }
 
-nav > .nav-links > a:nth-child(5n+2).active, nav > .nav-links > a:nth-child(5n+2):hover {
+nav .nav-links > a:nth-child(5n+2).active, nav > .nav-links > a:nth-child(5n+2):hover {
     color: #7ac6b8;
 }
 
-nav > .nav-links > a:nth-child(5n+3).active, nav > .nav-links > a:nth-child(5n+3):hover {
+nav .nav-links > a:nth-child(5n+3).active, nav > .nav-links > a:nth-child(5n+3):hover {
     color: #f9b000;
 }
 
-nav > .nav-links > a:nth-child(5n+4).active, nav > .nav-links > a:nth-child(5n+4):hover {
+nav .nav-links > a:nth-child(5n+4).active, nav > .nav-links > a:nth-child(5n+4):hover {
     color: #3dacbe;
 }
 
-nav > .language-links > a {
+nav .language-links {
+    margin-top: 50px;
+
+    font-size: 1.25em;
+}
+
+nav .language-links > a {
     color: inherit;
 
     text-decoration: none;
 }
 
-nav > .language-links > a.active, nav > .language-links > a:hover {
+nav .language-links > a.active, nav > .language-links > a:hover {
     color: #f9b000;
+}
+
+@media only screen and (min-width : 970px) {
+    nav .language-links {
+        margin: 0;
+    }
 }
 
 /*

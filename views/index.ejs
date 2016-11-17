@@ -20,28 +20,35 @@
     <nav>
         <img src="/assets/images/logo.png" alt="Acomodeo">
 
-        <div class="nav-links">
-            <%
-            for(var i = 0; i < pages.length; i++) {
-                var p = pages[i];
-                
-                if(!p.getBoolean('page.isInNavigation'))
+        <div class="nav-container">
+            <div class="nav-links">
+                <%
+                for(var i = 0; i < pages.length; i++) {
+                    var p = pages[i];
+
+                    if(!p.getBoolean('page.isInNavigation'))
                     continue;
-                %>
-                <a
+                    %>
+                    <a
                     <% if((template == 'blog-post') ?  (p.uid == 'blog') : (page.uid == p.uid)) { %>
                         class="active"
-                    <% } %>
-                    href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
-                </a>
-                <%
-            }
-            %>
+                        <% } %>
+                        href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
+                        </a>
+                        <%
+                    }
+                    %>
+            </div>
+
+            <div class="language-links">
+                <a href="<%= languageLinks['en'] %>" <% if(lang == 'en') { %>class="active" <% } %>><%= lang == 'en' ? 'english' : 'englisch' %></a> /
+                <a href="<%= languageLinks['de'] %>" <% if(lang == 'de') { %>class="active" <% } %>><%= lang == 'en' ? 'german' : 'deutsch' %></a>
+            </div>
+
+            <button onclick="$('.nav-container').removeClass('shown')"><img src="/assets/images/close.png" alt="menu"></button>
         </div>
-        <div class="language-links">
-            <a href="<%= languageLinks['en'] %>" <% if(lang == 'en') { %>class="active" <% } %>><%= lang == 'en' ? 'english' : 'englisch' %></a> /
-            <a href="<%= languageLinks['de'] %>" <% if(lang == 'de') { %>class="active" <% } %>><%= lang == 'en' ? 'german' : 'deutsch' %></a>
-        </div>
+
+        <button onclick="$('.nav-container').addClass('shown')"><img src="/assets/images/menu.png" alt="menu"></button>
     </nav>
 
     <style>
