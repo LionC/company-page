@@ -33,5 +33,6 @@ function refetch() {
 }
 
 exp.ready = fetchData();
+exp.refetch = refetch;
 
 module.exports = exp;
