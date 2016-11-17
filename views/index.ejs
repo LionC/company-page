@@ -23,7 +23,11 @@
         <div class="nav-links">
             <%
             for(var i = 0; i < pages.length; i++) {
-                var p = pages[i];%>
+                var p = pages[i];
+                
+                if(!p.getBoolean('page.isInNavigation'))
+                    continue;
+                %>
                 <a
                     <% if((template == 'blog-post') ?  (p.uid == 'blog') : (page.uid == p.uid)) { %>
                         class="active"

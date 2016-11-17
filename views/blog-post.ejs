@@ -49,10 +49,7 @@
 
         "description": "<%= blogPost.getStructuredText('blog-post.lead-' + lang).asText() %>",
         "articleBody": "<%= blogPost.getSliceZone('blog-post.body-' + lang).asText() %>",
-        "author": {
-            "@type": "Person",
-            "name": "Steve"
-        }
+        "author": <%- include('company-jsonld'); %>
     }
     </script>
 

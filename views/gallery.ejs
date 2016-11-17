@@ -1,0 +1,10 @@
+<section class="gallery">
+    <%
+    var sliceGroups = slice.value.toArray();
+
+    for(var j = 0; j < sliceGroups.length; j++) {
+        var image = sliceGroups[j].getImage('image');
+        %><img src="<%= image.url %>" alt="<%= image.asText() %>"><%
+    }
+    %>
+</section>
