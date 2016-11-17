@@ -107,6 +107,8 @@ nav {
 
     border-bottom: 1px solid;
     border-color: rgba(0,0,0,0);
+
+    z-index: 1;
 }
 
 nav > img {
@@ -217,12 +219,14 @@ nav > .language-links > a.active, nav > .language-links > a:hover {
 */
 
 header {
-    text-align: center;
-    color: white;
+    position: relative;
 }
 
 header > div.container {
     padding: 200px 0 200px 0;
+
+    text-align: center;
+    color: white;
 }
 
 header {
@@ -249,6 +253,10 @@ footer {
 * Content
 */
 
+main {
+    background-color: white;
+}
+
 main section {
     display: flex;
     flex-direction: column;
@@ -274,22 +282,23 @@ main section:nth-child(even) {
     color: white;
 }
 
-section.product {
-    justify-content: space-around;
+section.img-text-pair, section.product {
+    justify-content: flex-start;
 }
 
-section.img-text-pair > img, section.product > img {
+section.img-text-pair:nth-child(odd), section.product:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+section.img-text-pair img, section.product img {
     width: 100%;
 }
 
 @media only screen and (min-width : 970px) {
-    section.img-text-pair > img, section.product > img {
+    section.img-text-pair img, section.product img {
         width: auto;
         height: 300px;
-    }
-
-    section.img-text-pair > :first-child, section.product > :first-child {
-        padding-right: 30px;
+        padding: 0px 50px;
     }
 }
 
