@@ -41,7 +41,7 @@
         "image": "<%= blogPost.getImage('blog-post.previewImage').url %>",
 
         "keywords": "<%= blogPost.getGroup('blog-post.keywords').toArray()[0].getText(lang) %>",
-        "wordcount": "<%= blogPost.getGroup('blog-post.keywords').toArray()[0].getText(lang).split(" ").length %>",
+        "wordcount": "<%= blogPost.getSliceZone('blog-post.body-' + lang).asText().split(" ").length %>",
 
         "datePublished": "<%= blogPost.firstPublicationDate %>",
         "dateCreated": "<%= blogPost.firstPublicationDate %>",

@@ -17,6 +17,14 @@ a, a:hover, a:active {
     color: inherit;
 }
 
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
 /*
 * Typography
 */
@@ -304,6 +312,7 @@ main section {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     padding: 30px 15px;
 }
