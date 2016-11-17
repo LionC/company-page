@@ -1,3 +1,3 @@
 <meta name="description" content="<%= blogPost.getStructuredText('blog-post.lead-' + lang).asText() %>">
-<!-- TODO: keywords for blog entries -->
+<meta name="keywords" content="<%= blogPost.getGroup('blog-post.keywords').toArray()[0].getText(lang) %>">
 <title><%= blogPost.getText('blog-post.title-' + lang) %></title>
