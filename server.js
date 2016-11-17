@@ -1,18 +1,32 @@
 var assert = require('assert');
 var express = require('express');
+var bodyParser = require('body-parser');
 
 var prismicData = require('./prismic');
 
 var PORT = process.env.PORT || 8080;
+var PRISMIC_SECRET = process.env.PRISMIC_SECRET || 'secret';
 
 var app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/static'));
 
+//Prismic Webhook route
+app.post('/api/prismic-webhook', bodyParser.json(), function (req, res) {
+    if(req.body.secret != PRISMIC_SECRET)
+        return res.status(401).send('');
+
+    prismicData.refetch();
+});
+
+//Default route
 app.get('/', function(req, res) { res.redirect('/en/aboutus') });
+
+//General page route
 app.get('/:lang/:uid', renderPage);
 
+//Blog post route
 app.get('/:lang/blog/:uid', function (req, res) {
     //TODO: Create blog post map
     var blogPost = prismicData.blog.filter(function (post) {
