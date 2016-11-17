@@ -18,6 +18,7 @@ app.post('/api/prismic-webhook', bodyParser.json(), function (req, res) {
         return res.status(401).send('');
 
     prismicData.refetch();
+    return res.status(200).send('');
 });
 
 //Default route
