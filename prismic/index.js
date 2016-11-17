@@ -31,7 +31,7 @@ function fetchData() {
 function refetch() {
     for(var i in exp)
         if(typeof exp[i] != 'function')
-            expt[i] = [];
+            exp[i] = [];
 
     exp.ready = fetchData();
 }
