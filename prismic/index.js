@@ -1,6 +1,7 @@
 const cache = require('persistent-cache');
 const Prismic = require('prismic.io');
-const util = require('util')
+const util = require('util');
+var Promise = require('promise');
 
 var exp = {
     products: [],
@@ -9,19 +10,44 @@ var exp = {
     pages: []
 };
 
-const typeMap = {
-    'team-member': 'team',
-    'product': 'products',
-    'blog-post': 'blog',
-    'page': 'pages'
+const types = {
+    'team-member': {
+        expKey: 'team',
+        ordered: true
+    },
+    'product': {
+        expKey: 'products',
+        ordered: true
+    },
+    'blog-post': {
+        expKey: 'blog',
+        ordered: false
+    },
+    'page': {
+        expKey: 'pages',
+        ordered: true
+    }
 };
 
-function fetchPage(page) {
+function fetchPage(page, type, ordered) {
+    var config = {
+        pageSize: 100,
+        page: page
+    };
+
+    if(ordered) {
+        config.orderings = [
+            "[my." + type + ".order]"
+        ];
+    }
+
     return Prismic.api("https://aco-company-page.prismic.io/api").then(function(api) {
-        return api.query("", { pageSize : 100, page: page });
+        return api.query([
+            Prismic.Predicates.at("document.type", type)
+        ], config);
     }).then(function(response) {
         response.results.forEach(function (doc) {
-            exp[typeMap[doc.type]].push(doc);
+            exp[types[doc.type].expKey].push(doc);
         });
 
         return response.next_page != null ? fetchPage(response.page + 1) : true;
@@ -30,8 +56,17 @@ function fetchPage(page) {
     });
 }
 
+function fetchDocuments(type, ordered) {
+    return fetchPage(1, type, ordered);
+}
+
 function fetchData() {
-    return fetchPage(1);
+    var promises = [];
+
+    for(var type in types)
+        promises.push(fetchDocuments(type, types[type].ordered));
+
+    return Promise.all(promises);
 }
 
 function refetch() {
