@@ -29,7 +29,7 @@ button {
 * Typography
 */
 
-html, body {
+html, body, svg {
     line-height: 1.43;
     font-size: 19px;
     font-family: Lato;
@@ -252,6 +252,8 @@ nav .language-links > a {
     color: inherit;
 
     text-decoration: none;
+
+    text-transform: uppercase;
 }
 
 nav .language-links > a.active, nav > .language-links > a:hover {
@@ -261,6 +263,7 @@ nav .language-links > a.active, nav > .language-links > a:hover {
 @media only screen and (min-width : 970px) {
     nav .language-links {
         margin: 0;
+        font-size: 1.1em;
     }
 }
 
@@ -334,6 +337,7 @@ main section:nth-child(even) {
 
 section.img-text-pair, section.product {
     justify-content: flex-start;
+    flex-wrap: nowrap;
 }
 
 section.img-text-pair img, section.product img {
