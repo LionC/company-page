@@ -16,16 +16,22 @@ const typeMap = {
     'page': 'pages'
 };
 
-function fetchData() {
+function fetchPage(page) {
     return Prismic.api("https://aco-company-page.prismic.io/api").then(function(api) {
-        return api.query("");
+        return api.query("", { pageSize : 100, page: page });
     }).then(function(response) {
         response.results.forEach(function (doc) {
             exp[typeMap[doc.type]].push(doc);
         });
+
+        return response.next_page != null ? fetchPage(response.page + 1) : true;
     }).catch(function(err) {
         console.err("Something went wrong: ", err);
     });
+}
+
+function fetchData() {
+    return fetchPage(1);
 }
 
 function refetch() {
