@@ -199,7 +199,7 @@ nav .nav-links > a {
         flex-direction: row;
         justify-content: flex-start;
 
-        padding-right: 15px;
+        padding-right: 25px;
 
         opacity: 1;
         pointer-events: all;
@@ -212,7 +212,7 @@ nav .nav-links > a {
         width: 800px;
 
         margin-left: auto;
-        margin-right: 50px;
+        margin-right: 75px;
 
         font-size: 1.1em;
     }
