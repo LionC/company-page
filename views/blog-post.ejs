@@ -34,23 +34,27 @@
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
-        "@type": "BlogPosting",
-        "url": "https://company.acomodeo.com/blog/<%= blogPost.uid %>",
+        "@type": "WebPage",
+        "mainEntity": {
+            "@type": "BlogPosting",
+            "url": "https://company.acomodeo.com/blog/<%= blogPost.uid %>",
 
-        "headline": "<%= blogPost.getText('blog-post.title-' + lang) %>",
-        "image": "<%= blogPost.getImage('blog-post.previewImage').url %>",
+            "headline": "<%= blogPost.getText('blog-post.title-' + lang) %>",
+            "image": "<%= blogPost.getImage('blog-post.previewImage').url %>",
 
-        "keywords": "<%= blogPost.getGroup('blog-post.keywords').toArray()[0].getText(lang) %>",
-        "wordcount": "<%= blogPost.getSliceZone('blog-post.body-' + lang).asText().split(" ").length %>",
+            "keywords": "<%= blogPost.getGroup('blog-post.keywords').toArray()[0].getText(lang) %>",
+            "wordcount": "<%= blogPost.getSliceZone('blog-post.body-' + lang).asText().split(" ").length %>",
 
-        "datePublished": "<%= blogPost.firstPublicationDate %>",
-        "dateCreated": "<%= blogPost.firstPublicationDate %>",
-        "dateModified": "<%= blogPost.lastPublicationDate %>",
+            "datePublished": "<%= blogPost.firstPublicationDate %>",
+            "dateCreated": "<%= blogPost.firstPublicationDate %>",
+            "dateModified": "<%= blogPost.lastPublicationDate %>",
 
-        "description": "<%= blogPost.getStructuredText('blog-post.lead-' + lang).asText() %>",
-        "articleBody": "<%= blogPost.getSliceZone('blog-post.body-' + lang).asText() %>",
-        "author": <%- include('company-jsonld'); %>
+            "description": "<%= blogPost.getStructuredText('blog-post.lead-' + lang).asText() %>",
+            "articleBody": "<%= blogPost.getSliceZone('blog-post.body-' + lang).asText() %>",
+            "publisher": <%- include('company-jsonld'); %>
+        }
     }
+
     </script>
 
 </section>
