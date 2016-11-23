@@ -51,7 +51,8 @@
 
             "description": "<%= blogPost.getStructuredText('blog-post.lead-' + lang).asText() %>",
             "articleBody": "<%= blogPost.getSliceZone('blog-post.body-' + lang).asText() %>",
-            "publisher": <%- include('company-jsonld'); %>
+            "publisher": { "@id": "https://company-page.develop.acomodeo.com" },
+            "author" { "@id": "https://company-page.develop.acomodeo.com" }: 
         }
     }
 
