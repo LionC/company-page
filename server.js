@@ -69,6 +69,7 @@ function render(req, res, params) {
         team: prismicData.team,
         blog: prismicData.blog,
         pages: prismicData.pages,
+        workflow: prismicData.workflow[0],
 
         languageLinks: buildLanguageLinks(req.path)
     };

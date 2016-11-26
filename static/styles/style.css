@@ -481,3 +481,42 @@ section.blog-post figure figcaption > :first-child {
     font-size: 1.15em;
     font-weight: 400;
 }
+
+section.workflow {
+    flex-direction: row;
+    align-items: flex-start;;
+    justify-content: flex-start;
+}
+
+section.workflow > ul {
+    margin-left: 18px;
+    margin-top: 0;
+
+    list-style: none;
+
+    display: none;
+}
+
+section.workflow > ul:first-of-type {
+    font-size: 1.3em;
+
+    display: block;
+
+    order: 1;
+}
+
+section.workflow > ul > li:not(:last-child) {
+    height: 105px;
+}
+
+@media only screen and (min-width : 970px) {
+    section.workflow > ul {
+        display: block;
+    }
+
+    section.workflow > ul:first-of-type {
+        min-width: 240px;
+
+        order: initial;
+    }
+}

@@ -7,7 +7,8 @@ var exp = {
     products: [],
     team: [],
     blog: [],
-    pages: []
+    pages: [],
+    workflow: []
 };
 
 const types = {
@@ -26,6 +27,10 @@ const types = {
     'page': {
         expKey: 'pages',
         ordered: true
+    },
+    'onboarding-workflow': {
+        expKey: 'workflow',
+        ordered: false
     }
 };
 
@@ -47,10 +52,10 @@ function fetchPage(page, type, ordered) {
         ], config);
     }).then(function(response) {
         response.results.forEach(function (doc) {
-            exp[types[doc.type].expKey].push(doc);
+            exp[types[doc.type].expKey].push(doc);    
         });
 
-        return response.next_page != null ? fetchPage(response.page + 1) : true;
+        return (response.next_page || null) != null ? fetchPage(response.page + 1) : true;
     }).catch(function(err) {
         console.err("Something went wrong: ", err);
     });
