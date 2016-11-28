@@ -8,7 +8,8 @@ var exp = {
     team: [],
     blog: [],
     pages: [],
-    workflow: []
+    workflow: [],
+    successStories: []
 };
 
 const types = {
@@ -31,6 +32,10 @@ const types = {
     'onboarding-workflow': {
         expKey: 'workflow',
         ordered: false
+    },
+    'success-story': {
+        expKey: 'successStories',
+        ordered: true
     }
 };
 
@@ -52,7 +57,7 @@ function fetchPage(page, type, ordered) {
         ], config);
     }).then(function(response) {
         response.results.forEach(function (doc) {
-            exp[types[doc.type].expKey].push(doc);    
+            exp[types[doc.type].expKey].push(doc);
         });
 
         return (response.next_page || null) != null ? fetchPage(response.page + 1) : true;

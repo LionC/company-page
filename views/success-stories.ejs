@@ -1,0 +1,16 @@
+<section class="success-stories">
+    <%
+    var sliceGroup = slice.value.toArray()[0];
+    %>
+    <h2><%= sliceGroup.getText('heading-' + lang) %></h2>
+    <% for(var i = 0; i < successStories.length; i++) { var successStory = successStories[i]; %>
+    <div>
+        <img src="<%= successStory.getImage('success-story.logo').url %>" alt="<%= successStory.getImage('success-story.logo').asText()%>">
+        <img class="circle" src="<%= successStory.getImage('success-story.portrait').url %>" alt="<%= successStory.getImage('success-story.portrait').asText() %>">
+        <blockquote>
+            <p><%= successStory.getText('success-story.quote-' + lang) %></p>
+            <footer><%= successStory.getText('success-story.author') %></footer>
+        </blockquote>
+    </div>
+    <% } %>
+</section>

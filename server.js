@@ -70,6 +70,7 @@ function render(req, res, params) {
         blog: prismicData.blog,
         pages: prismicData.pages,
         workflow: prismicData.workflow[0],
+        successStories: prismicData.successStories,
 
         languageLinks: buildLanguageLinks(req.path)
     };
