@@ -517,10 +517,10 @@ section.blog-post {
 
 @media only screen and (min-width : 970px) {
     section.blog-post {
-        font-size: 1.14em;
+        font-size: 1.15em;
 
-        padding-right: calc(50% - 325px);
-        padding-left: calc(50% - 325px);
+        padding-right: calc(50% - 320px);
+        padding-left: calc(50% - 320px);
     }
 }
 
