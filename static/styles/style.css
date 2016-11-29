@@ -416,11 +416,29 @@ section.gallery > img {
     }
 }
 
-section.gallery, section.team {
+section.gallery, section.team, section.logos {
     flex-wrap: wrap;
 }
 
-section.product > h2, section.gallery > h1 {
+section.logos {
+    justify-content: space-around;
+}
+
+section.logos > img {
+    width: 100%;
+    margin-top: 30px;
+}
+
+@media only screen and (min-width : 970px) {
+    section.logos > img {
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 85px;
+        width: auto;
+    }
+}
+
+section.product > h2, section.gallery > h1, section.logos > h2 {
     flex-basis: 100%;
     text-align: center;
 
@@ -499,10 +517,10 @@ section.blog-post {
 
 @media only screen and (min-width : 970px) {
     section.blog-post {
-        font-size: 1.2em;
+        font-size: 1.14em;
 
-        padding-right: calc(50% - 320px);
-        padding-left: calc(50% - 320px);
+        padding-right: calc(50% - 325px);
+        padding-left: calc(50% - 325px);
     }
 }
 

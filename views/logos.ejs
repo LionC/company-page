@@ -1,0 +1,11 @@
+<section class="logos">
+    <h2>
+        <%= lang == 'en' ? 'Our Partners' : 'Unsere Partner' %>
+    </h2>
+    <%
+    var sliceGroups = slice.value.toArray();
+    for(var i = 0; i < sliceGroups.length; i++) { var image = sliceGroups[i].getImage('image');
+    %>
+    <img src="<%= image.url %>" alt="iamge.asText()">
+    <% } %>
+</section>
