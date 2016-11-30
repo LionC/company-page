@@ -454,8 +454,13 @@ section.team {
     text-align: center;
 }
 
+section.team > a, section.team > a:hover, section.team > a:active {
+    display: block;
+    text-decoration: none;
+}
+
 @media only screen and (min-width : 970px) {
-    section.team > div {
+    section.team > div, section.team > a {
         width: 25%;
     }
 }
@@ -465,24 +470,24 @@ section.team > h1 {
     margin-top: 0;
 }
 
-section.team > div {
+section.team > div, section.team > a {
     margin-top: 22px;
 }
 
-section.team > div > img {
+section.team > div > img, section.team > a > img {
     border-radius: 50%;
     width: 70%;
 }
 
-section.team > div > h4 {
+section.team > div > h4, section.team > a > h4 {
     margin: 15px 0 0 0;
 }
 
-section.team > div > p, section.team > div > h4 {
+section.team > div > p, section.team > div > h4, section.team > a > p, section.team > a > h4 {
     white-space: nowrap;
 }
 
-section.team > div > p {
+section.team > div > p, section.team > a > p {
     margin: 7px 0 0 0;
 }
 
