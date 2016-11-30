@@ -547,12 +547,23 @@ section.blog-post figure figcaption > :first-child {
 }
 
 section.workflow {
+    display: block;
+}
+
+section.workflow > h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+section.workflow > div.workflow-container {
+    display: flex;
     flex-direction: row;
     align-items: flex-start;;
     justify-content: flex-start;
 }
 
-section.workflow > ul {
+section.workflow > div.workflow-container > ul {
     margin-left: 18px;
     margin-top: 0;
 
@@ -561,7 +572,7 @@ section.workflow > ul {
     display: none;
 }
 
-section.workflow > ul:first-of-type {
+section.workflow > div.workflow-container > ul:first-of-type {
     font-size: 1.3em;
 
     display: block;
@@ -569,16 +580,16 @@ section.workflow > ul:first-of-type {
     order: 1;
 }
 
-section.workflow > ul > li:not(:last-child) {
+section.workflow > div.workflow-container > ul > li:not(:last-child) {
     height: 105px;
 }
 
 @media only screen and (min-width : 970px) {
-    section.workflow > ul {
+    section.workflow > div.workflow-container > ul {
         display: block;
     }
 
-    section.workflow > ul:first-of-type {
+    section.workflow > div.workflow-container > ul:first-of-type {
         min-width: 240px;
 
         order: initial;

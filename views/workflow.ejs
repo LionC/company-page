@@ -1,21 +1,22 @@
 <section class="workflow">
-
-    <ul>
-        <% for(var i = 1; i <= 5; i++) { %>
-        <li>
+    <h2><%= workflow.getText('onboarding-workflow.heading-' + lang) %></h2>
+    <div class="workflow-container">
+        <ul>
+            <% for(var i = 1; i <= 5; i++) { %>
+            <li>
             <%= workflow.getText('onboarding-workflow.step' + i + '-caption-' + lang) %>
-        </li>
-        <% } %>
-    </ul>
+            </li>
+            <% } %>
+        </ul>
 
-    <img src="/assets/images/workflow.png">
+        <img src="/assets/images/workflow.png">
 
-    <ul>
-        <% for(var i = 1; i <= 5; i++) { %>
-        <li>
-            <%= workflow.getText('onboarding-workflow.step' + i + '-text-' + lang) %>
-        </li>
-        <% } %>
-    </ul>
-
+        <ul>
+            <% for(var i = 1; i <= 5; i++) { %>
+                <li>
+                <%= workflow.getText('onboarding-workflow.step' + i + '-text-' + lang) %>
+                </li>
+                <% } %>
+        </ul>
+    </div>
 </section>
