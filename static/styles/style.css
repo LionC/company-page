@@ -149,8 +149,6 @@ nav > img, nav > button {
     margin: 10px;
 }
 
-
-
 nav .nav-container {
     flex-grow: 1;
 
@@ -252,12 +250,12 @@ nav .nav-links > a {
         flex-direction: row;
         justify-content: space-around;
 
-        width: 800px;
+        width: 650px;
 
         margin-left: auto;
         margin-right: 75px;
 
-        font-size: 1.1em;
+        font-size: .85em;
     }
 
     nav button {
