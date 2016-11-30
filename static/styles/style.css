@@ -450,6 +450,7 @@ section.product {
 }
 
 section.team {
+    flex-direction: row;
     justify-content: flex-start;
     text-align: center;
 }
@@ -459,19 +460,22 @@ section.team > a, section.team > a:hover, section.team > a:active {
     text-decoration: none;
 }
 
+section.team > div, section.team > a {
+    width: 50%;
+    margin-top: 22px;
+    font-size: .7em;
+}
+
 @media only screen and (min-width : 970px) {
     section.team > div, section.team > a {
         width: 25%;
+        font-size: 1em;
     }
 }
 
 section.team > h1 {
     flex-basis: 100%;
     margin-top: 0;
-}
-
-section.team > div, section.team > a {
-    margin-top: 22px;
 }
 
 section.team > div > img, section.team > a > img {
