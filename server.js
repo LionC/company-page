@@ -1,6 +1,7 @@
-var assert = require('assert');
-var express = require('express');
-var bodyParser = require('body-parser');
+const assert = require('assert');
+const express = require('express');
+const bodyParser = require('body-parser');
+const compression = require('compression');
 
 var prismicData = require('./prismic');
 
@@ -13,6 +14,7 @@ var app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/static'));
+app.use(compression());
 
 //Prismic Webhook route
 app.post('/api/prismic-webhook', bodyParser.json(), function (req, res) {
