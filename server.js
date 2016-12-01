@@ -7,6 +7,8 @@ var prismicData = require('./prismic');
 var PORT = process.env.PORT || 8080;
 var PRISMIC_SECRET = process.env.PRISMIC_SECRET || 'secret';
 
+var LANGUAGES = [ 'en', 'de' ];
+
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -23,6 +25,16 @@ app.post('/api/prismic-webhook', bodyParser.json(), function (req, res) {
 
 //Default route
 app.get('/', function(req, res) { res.redirect('/en/aboutus') });
+
+app.get('/sitemap', function (req, res) {
+    res.set('Content-Type', 'text/xml');
+
+    res.render('sitemap', {
+        host: req.hostname,
+        languages: LANGUAGES,
+        pages: prismicData.pages
+    });
+});
 
 //General page route
 app.get('/:lang/:uid', renderPage);
@@ -71,6 +83,8 @@ function render(req, res, params) {
         pages: prismicData.pages,
         workflow: prismicData.workflow[0],
         successStories: prismicData.successStories,
+        languages: LANGUAGES,
+        host: req.hostname,
 
         languageLinks: buildLanguageLinks(req.path)
     };
@@ -92,7 +106,6 @@ function startServer() {
     });
 }
 
-var LANGUAGES = [ 'en', 'de' ];
 
 function buildLanguageLinks(path) {
     var relativePath = path.substr(3);

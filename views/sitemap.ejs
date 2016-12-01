@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+    http://www.w3.org/1999/xhtml http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+    <%
+    for(var i = 0; i < pages.length; i++) {
+        for(var j = 0; j < languages.length; j++) {
+            var page = pages[i];
+            var lang = languages[j];
+    %>
+    <url>
+        <loc>https://<%= host %>/<%= lang %>/<%= page.uid %></loc>
+        <% languages.forEach(function (l) { %>
+        <xhtml:link
+            rel="alternate"
+            hreflang="<%= l %>"
+            href="https://<%= host %>/<%= l %>/<%= page.uid %>"
+        />
+        <% }); %>
+        <lastmod><%= page.lastPublicationDate %></lastmod>
+        <changefreq><%= page.getText('page.changeFrequency') %></changefreq>
+        <priority><%= page.getText('page.priority') %></priority>
+        </url>
+    <%
+        }
+    }
+    %>
+</urlset>
