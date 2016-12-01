@@ -12,6 +12,9 @@
         for(var j = 0; j < languages.length; j++) {
             var page = pages[i];
             var lang = languages[j];
+            
+            if(!page.getBoolean('page.isInNavigation'))
+                continue;
     %>
     <url>
         <loc>https://<%= host %>/<%= lang %>/<%= page.uid %></loc>
