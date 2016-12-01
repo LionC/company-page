@@ -13,13 +13,23 @@
     "founders": [
         {
             "@type": "Person",
-            "name": "Eric-Jan Krausch"
+            "name": "Eric-Jan Krausch",
+            "jobTitle": "Founder & CEO"
         },
         {
             "@type": "Person",
-            "name": "David Wohde"
+            "name": "David Wohde",
+            "jobTitle": "Founder & COO"
         }
      ],
+
+     "employees": <%- JSON.stringify(team.map(function (member) {
+            return {
+                "@†ype": "Person",
+                "name": member.getText('team-member.name'),
+                "jobTitle": member.getText('team-member.jobTitle')
+            }
+        })); %>
 
      "address": {
          "@type": "PostalAddress",
