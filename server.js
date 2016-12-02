@@ -88,7 +88,8 @@ function render(req, res, params) {
         languages: LANGUAGES,
         host: req.hostname,
 
-        languageLinks: buildLanguageLinks(req.path)
+        languageLinks: buildLanguageLinks(req.path),
+        buildAnchor: buildAnchor
     };
 
     for(var i in defaultParams) {
@@ -118,6 +119,10 @@ function buildLanguageLinks(path) {
     });
 
     return ret;
+}
+
+function buildAnchor(name) {
+    return name.toLowerCase().replace(/\s/g, '-');
 }
 
 prismicData.ready.then(startServer);

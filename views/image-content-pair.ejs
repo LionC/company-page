@@ -1,9 +1,9 @@
-<section class="img-text-pair">
-    <%
-    var sliceGroup = slice.value.toArray()[0];
-    var image = sliceGroup.getImage('image');
-    var content = sliceGroup.getStructuredText('content-' + lang);
-    %>
+<%
+var sliceGroup = slice.value.toArray()[0];
+var image = sliceGroup.getImage('image');
+var content = sliceGroup.getStructuredText('content-' + lang);
+%>
+<section id="<%- buildAnchor(sliceGroup.getText('navigationName-en') || '') %>" class="img-text-pair">
     <img src="<%= image.url %>" alt="<%= image.asText() %>">
     <div>
         <%- content.asHtml() %>
