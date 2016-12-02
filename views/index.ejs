@@ -27,7 +27,7 @@
         <img src="https://static.acomodeo.com/images/logo-small.png" alt="Acomodeo">
 
         <div class="nav-container">
-            <div class="nav-links">
+            <ul class="nav-links">
                 <%
                 for(var i = 0; i < pages.length; i++) {
                     var p = pages[i];
@@ -35,16 +35,29 @@
                     if(!p.getBoolean('page.isInNavigation'))
                     continue;
                     %>
-                    <a
-                    <% if((template == 'blog-post') ?  (p.uid == 'blog') : (page.uid == p.uid)) { %>
-                        class="active"
-                        <% } %>
-                        href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
+                    <li>
+                        <a
+                            <% if((template == 'blog-post') ?  (p.uid == 'blog') : (page.uid == p.uid)) { %>
+                                class="active"
+                            <% } %>
+                            href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
                         </a>
-                        <%
+                        <ul>
+                            <%
+                            var slices = p.getSliceZone('page.body').slices;
+
+                            slices.forEach(function (slice) {
+                            %>
+                            <li>
+                                <a href="/<%= lang %>/<%= p.uid %>#<%= slice.sliceType %>"><%= slice.sliceType %></a>
+                            </li>
+                            <% });%>
+                        </ul>
+                    </li>
+                    <%
                     }
-                    %>
-            </div>
+                %>
+            </ul>
 
             <div class="language-links">
                 <a href="<%= languageLinks['en'] %>" <% if(lang == 'en') { %>class="active" <% } %>>en</a> /
