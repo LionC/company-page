@@ -478,6 +478,7 @@ section.img-text-pair img, section.product img {
 section.gallery > img {
     width: 100%;
     padding-top: 40px;
+    display: block;
 }
 
 @media only screen and (min-width : 970px) {
@@ -714,28 +715,38 @@ section.workflow > div.workflow-container > ul > li:not(:last-child) {
     }
 }
 
+section.success-stories {
+    display: block;
+}
+
 section.success-stories > h2 {
     text-align: center;
     margin-top: 0;
 }
 
+section.success-stories > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    background-color: #e8e6eb;
+    color: black;
+    border-radius: 10px;
+
+    padding: 8px;
+    margin-top: 35px;
+}
+
+section.success-stories > div > img, section.success-stories > div > blockquote {
+    width: 100%;
+}
+
 @media only screen and (min-width : 970px) {
-    section.success-stories {
-        display: block;
-    }
-
     section.success-stories > div {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
         flex-wrap: wrap;
-
-        background-color: #e8e6eb;
-        color: black;
-        border-radius: 10px;
-
-        padding: 8px;
-        margin-top: 35px;
+        flex-direction: row;
     }
 
     section.success-stories > div > img:first-of-type {
