@@ -755,6 +755,26 @@ section.success-stories > h2 {
     }
 }
 
+section.contact-form > form > label {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+}
+
+section.contact-form > form > label > input, section.contact-form > form > label > select, section.contact-form > form > label > textarea {
+    display: block;
+    width: 100%;
+}
+
+section.contact-form > form button {
+    margin-top: 20px;
+    width: 100%;
+}
+
+section.contact-form > form {
+    width: 100%;
+}
+
 @media only screen and (min-width : 970px) {
     section.contact-form {
         align-items: flex-start;
@@ -775,22 +795,10 @@ section.success-stories > h2 {
     }
 
     section.contact-form > form > label {
-        margin-top: 10px;
-        display: block;
         width: 45%;
     }
 
     section.contact-form > form > label.full-width {
-        width: 100%;
-    }
-
-    section.contact-form > form > label > input, section.contact-form > form > label > select, section.contact-form > form > label > textarea {
-        display: block;
-        width: 100%;
-    }
-
-    section.contact-form > form button {
-        margin-top: 20px;
         width: 100%;
     }
 }
