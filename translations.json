@@ -1,0 +1,54 @@
+{
+    "hello": {
+        "en": "Hello",
+        "de": "Hallo"
+    },
+    "asdf": {
+        "en": "asdf",
+        "de": "asdfö"
+    },
+    "firstname": {
+        "en": "First Name",
+        "de": "Vorname"
+    },
+    "lastname": {
+        "en": "Last Name",
+        "de": "Nachname"
+    },
+    "phone": {
+        "en": "Telephone",
+        "de": "Telefon"
+    },
+    "message": {
+        "en": "Message",
+        "de": "Nachricht"
+    },
+    "send": {
+        "en": "Send",
+        "de": "Senden"
+    },
+    "numberOfEmployees": {
+        "en": "Number of Employees",
+        "de": "Anzahl der Mitarbeiter"
+    },
+    "company": {
+        "en": "Company",
+        "de": "Firma"
+    },
+    "revenue": {
+        "en": "Company Revenue",
+        "de": "Firmenumsatz"
+    },
+    "city": {
+        "en": "City",
+        "de": "Stadt"
+    },
+    "country": {
+        "en": "Country",
+        "de": "Land"
+    },
+    "numberOfApartments": {
+        "en": "Number of Apartments",
+        "de": "Anzahl der Apartments"
+    }
+}

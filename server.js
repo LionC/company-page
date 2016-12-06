@@ -9,6 +9,13 @@ var PORT = process.env.PORT || 8080;
 var PRISMIC_SECRET = process.env.PRISMIC_SECRET || 'secret';
 
 var LANGUAGES = [ 'en', 'de' ];
+var TRANSLATIONS = require('./translations.json');
+
+function buildTranslationFunction(language) {
+    return function translate(key) {
+        return TRANSLATIONS[key][language];
+    }
+}
 
 var app = express();
 
@@ -89,7 +96,8 @@ function render(req, res, params) {
         host: req.hostname,
 
         languageLinks: buildLanguageLinks(req.path),
-        buildAnchor: buildAnchor
+        buildAnchor: buildAnchor,
+        __: buildTranslationFunction(req.params.lang)
     };
 
     for(var i in defaultParams) {
@@ -102,9 +110,6 @@ function render(req, res, params) {
 
 function startServer() {
     var server = app.listen(PORT, function() {
-        console.dir(prismicData.pages[3].getSliceZone('page.body').slices[0]);
-        console.dir(prismicData.pages[3].getSliceZone('page.body').slices[4]);
-
         var host = server.address().address;
         var port = server.address().port;
 

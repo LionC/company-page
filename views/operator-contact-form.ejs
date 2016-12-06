@@ -1,0 +1,65 @@
+<section class="contact-form">
+    <h2><%= slice.value.toArray()[0].getText('heading-' + lang) %></h2>
+
+    <div class="person">
+        <img src="https://prismic-io.s3.amazonaws.com/aco-company-page/33a2d857ed3a77b9b5f27bf43f3c44b5ddfd9572_acomodeo_aline_sw1.jpg">
+        <h4>Aline Halbritter</h4>
+        <p>Head of Sourcing</p>
+    </div>
+
+    <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+            <input type="hidden" name="oid" value="00D24000000bPPL">
+            <input type="hidden" name="retURL" value="http://localhost:5555/operators">
+            <input type="hidden" name="lead_source" id="lead_source" value="Web">
+            <input type="hidden" name="RecordTypeId" id="RecordTypeId" value="012240000001lywAAA">
+
+            <label for="firstname">
+                <%= __('firstname') %>
+                <input id="firstname" maxlength="40" name="first_name" size="20" type="text" placeholder="Vorname">
+            </label>
+
+            <label for="lastname">
+                <%= __('lastname') %>
+                <input id="lastname" maxlength="80" name="last_name" size="20" type="text" placeholder="Nachname">
+            </label>
+
+            <label for="email">
+                E-Mail
+                <input id="email" maxlength="80" name="email" size="20" type="text" placeholder="E-Mail" required="">
+            </label>
+
+            <label for="phone">
+                <%= __('phone') %>
+                <input id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="Telefon">
+            </label>
+
+            <label for="company">
+                <%= __('company') %>
+                <input id="company" maxlength="40" name="company" size="20" type="text" placeholder="Firma">
+            </label>
+
+            <label for="company">
+                <%= __('numberOfApartments') %>
+                <input id="00N2400000F7TKi" name="00N2400000F7TKi" size="20" type="text" placeholder="Anzahl der Apartments">
+            </label>
+
+            <label for="URL">
+                Website
+                <input id="URL" maxlength="80" name="URL" size="20" type="text" placeholder="Website">
+            </label>
+
+            <label for="city">
+                <%= __('city') %>
+                <input id="city" maxlength="40" name="city" size="20" type="text" placeholder="Stadt">
+            </label>
+
+            <label for="country">
+                <%= __('country') %>
+                <input id="country" maxlength="40" name="country" size="20" type="text" placeholder="Land">
+            </label>
+
+            <button type="submit" name="submit">
+                <%= __('send') %>
+            </button>
+    </form>
+</section>

@@ -23,13 +23,18 @@ a, a:hover, a:active {
 * Interaction elements
 */
 
-input, select, button[type="submit"] {
-    box-shadow: none;
-    height: 34px;
+input, select, button[type="submit"], textarea {
     padding: 11px 5px 11px 5px;
+
+    box-shadow: none;
     border-radius: 3px;
     border: 1px solid #ccc;
+
     background-color: white;
+}
+
+input, select, button[type="submit"] {
+    height: 34px;
 }
 
 button[type="submit"] {
@@ -478,7 +483,7 @@ section.gallery > img {
     }
 }
 
-section.gallery, section.team, section.logos, section.customer-contact-form {
+section.gallery, section.team, section.logos, section.contact-form {
     flex-wrap: wrap;
 }
 
@@ -500,7 +505,7 @@ section.logos > img {
     }
 }
 
-section.product > h2, section.gallery > h1, section.logos > h2, section.customer-contact-form > h2 {
+section.product > h2, section.gallery > h1, section.logos > h2, section.contact-form > h2 {
     flex-basis: 100%;
     text-align: center;
 
@@ -751,34 +756,40 @@ section.success-stories > h2 {
 }
 
 @media only screen and (min-width : 970px) {
-    section.customer-contact-form {
+    section.contact-form {
         align-items: flex-start;
     }
 
-    section.customer-contact-form > div.person {
+    section.contact-form > div.person {
         width: 33%;
         align-self: center;
     }
 
-    section.customer-contact-form > form {
+    section.contact-form > form {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        width: 66%;
     }
 
-    section.customer-contact-form > form > label {
+    section.contact-form > form > label {
         margin-top: 10px;
         display: block;
         width: 45%;
     }
 
-    section.customer-contact-form > form > label > input, section.customer-contact-form > form > label > select {
+    section.contact-form > form > label.full-width {
+        width: 100%;
+    }
+
+    section.contact-form > form > label > input, section.contact-form > form > label > select, section.contact-form > form > label > textarea {
         display: block;
         width: 100%;
     }
 
-    section.customer-contact-form > form button {
+    section.contact-form > form button {
         margin-top: 20px;
         width: 100%;
     }

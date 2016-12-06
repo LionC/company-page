@@ -1,0 +1,30 @@
+<section class="contact-form">
+    <h2><%= slice.value.toArray()[0].getText('heading-' + lang) %></h2>
+
+    <div class="person">
+        <img src="https://prismic-io.s3.amazonaws.com/aco-company-page/0fd157e47cb71a140ba2a2f0e67b7a92d0f058f1_alex.jpg">
+        <h4>Alexander Wissing</h4>
+        <p>Chief Service Officier</p>
+    </div>
+
+    <form>
+        <label for="firstname">
+            Name
+            <input id="firstname" maxlength="120" name="first_name" size="20" type="text" placeholder="Vorname" required>
+        </label>
+
+        <label for="email">
+            E-Mail
+            <input id="email" maxlength="80" name="email" size="20" type="text" placeholder="E-Mail" required>
+        </label>
+
+        <label class="full-width" for="text">
+            <%= __('message') %>
+            <textarea id="text" name="text" rows="8" placeholder="Nachricht..." required></textarea>
+        </label>
+
+        <button type="submit">
+            <%= __('send') %>
+        </button>
+    </form>
+</section>

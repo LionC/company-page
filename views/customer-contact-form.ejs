@@ -1,5 +1,5 @@
-<section class="customer-contact-form">
-    <h2>Contact Us</h2>
+<section class="contact-form">
+    <h2><%= slice.value.toArray()[0].getText('heading-' + lang) %></h2>
 
     <div class="person">
         <img src="https://prismic-io.s3.amazonaws.com/aco-company-page/82fddba3066fac3407df3e8438009ea20923fbbd_161103_p1010655_sw_300dpi.jpg">
@@ -7,19 +7,19 @@
         <p>Sales Key Account Manager</p>
     </div>
 
-    <form style="width: 66%">
+    <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
         <input type="hidden" name="oid" value="00D24000000bPPL">
         <input type="hidden" name="retURL" value="http://localhost:5555/customers">
         <input type="hidden" name="lead_source" id="lead_source" value="Web">
         <input type="hidden" name="recordType" id="recordType" value="012240000001lz1AAA">
 
         <label for="firstname" translate="customers.form.firstname" class="ng-scope">
-            Vorname
+            <%= __('firstname') %>
             <input class="form-control" id="firstname" maxlength="40" name="first_name" size="20" type="text" placeholder="Vorname">
         </label>
 
         <label for="lastname" translate="customers.form.lastname" class="ng-scope">
-            Nachname
+            <%= __('lastname') %>
             <input class="form-control" id="lastname" maxlength="80" name="last_name" size="20" type="text" placeholder="Nachname">
         </label>
 
@@ -28,90 +28,38 @@
             <input class="form-control" id="email" maxlength="80" name="email" size="20" type="text" placeholder="E-Mail" required="">
         </label>
 
-        <label for="employees" translate="customers.form.employees" class="ng-scope">
-            Anzahl der Mitarbeiter
-            <input class="form-control" id="employees" name="employees" size="20" type="text" placeholder="Anzahl der Mitarbeiter">
+        <label for="industry" translate="customers.form.industry" class="ng-scope">
+            <%= __('phone') %>
+            <input id="phone" maxlength="40" name="phone" size="20" type="text" placeholder="Telefon">
         </label>
 
         <label for="company" translate="customers.form.company" class="ng-scope">
-            Firma
+            <%= __('company') %>
             <input class="form-control" id="company" maxlength="40" name="company" size="20" type="text" placeholder="Firma">
         </label>
 
+        <label for="employees" translate="customers.form.employees" class="ng-scope">
+            <%= __('numberOfEmployees') %>
+            <input class="form-control" id="employees" name="employees" size="20" type="text" placeholder="Anzahl der Mitarbeiter">
+        </label>
+
         <label for="revenue" translate="customers.form.revenue" class="ng-scope">
-            Firmenumsatz
+            <%= __('revenue') %>
             <input class="form-control" id="revenue" name="revenue" size="20" type="text" placeholder="Firmenumsatz">
         </label>
 
-        <label for="industry" translate="customers.form.industry" class="ng-scope">
-            Branche
-            <select class="form-control" id="industry" name="industry">
-                <option value="–">–</option>
-                <option value="Automotive">Automotive</option>
-                <option value="Building Industry">Building Industry</option>
-                <option value="Chemistry-Pharma">Chemistry-Pharma</option>
-                <option value="Commercial">Commercial</option>
-                <option value="Communication">Communication</option>
-                <option value="Consulting">Consulting</option>
-                <option value="Consumer Goods">Consumer Goods</option>
-                <option value="Education">Education</option>
-                <option value="Energy">Energy</option>
-                <option value="Finance">Finance</option>
-                <option value="Hospitality">Hospitality</option>
-                <option value="Logistics">Logistics</option>
-                <option value="Luxury Goods">Luxury Goods</option>
-                <option value="Media">Media</option>
-                <option value="Non profit">Non profit</option>
-                <option value="Other">Other</option>
-                <option value="Public Sector">Public Sector</option>
-                <option value="Technology">Technology</option>
-            </select>
-        </label>
-
         <label for="country" translate="customers.form.country" class="ng-scope">
-            Land
+            <%= __('country') %>
             <input class="form-control" id="country" maxlength="40" name="country" size="20" type="text" placeholder="Land">
         </label>
 
         <label for="city" translate="customers.form.city" class="ng-scope">
-            Stadt
+            <%= __('city') %>
             <input class="form-control" id="city" maxlength="40" name="city" size="20" type="text" placeholder="Stadt">
         </label>
 
-        <button class="form-control btn-success" type="submit">Senden</button>
+        <button class="form-control btn-success" type="submit">
+            <%= __('send') %>
+        </button>
     </form>
-
-    <!-- <div class="col-md-3">
-        <img class="img-responsive" src="/assets/images/customers/isabell.jpg"></div>
-    <div class="col-md-3">
-        <h2 translate="customers.contact.name" class="ng-scope">Isabell Heller</h2>
-        <h3 translate="customers.contact.position" class="ng-scope">Account Managerin Sales</h3>
-        <p>&nbsp;</p>
-        <p>
-            <strong translate="customers.contact.tel.titel" class="ng-scope">Tel.</strong>
-            <span translate="customers.contact.tel" class="ng-scope">+49 (0) 69 400500 320</span>
-        </p>
-        <p>
-            <strong translate="customers.contact.fax.title" class="ng-scope">Fax</strong>
-            <span translate="customers.contact.fax" class="ng-scope">+49 (0) 69 400500 399</span>
-        </p>
-        <p>
-            <strong translate="customers.contact.email.title" class="ng-scope">Mail</strong>
-            <a href="mailto:isabell.heller@acomodeo.com" translate="customers.contact.email" class="ng-scope">isabell.heller@acomodeo.com</a>
-        </p>
-        <p>&nbsp;</p>
-        <p>
-            <strong>
-                    <span translate="customers.contact.office" class="ng-scope">Acomodeo Zentrale</span>
-                </strong>
-        </p>
-        <p translate="customers.contact.street" class="ng-scope">Friedensstrasse 2</p>
-        <p translate="customers.contact.city" class="ng-scope">60311 Frankfurt am Main</p>
-        <p translate="customers.contact.country" class="ng-scope">Deutschland</p>
-    </div>
-
-    <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" class="ng-pristine ng-valid">
-
-
-        </form> -->
 </section>
