@@ -102,6 +102,9 @@ function render(req, res, params) {
 
 function startServer() {
     var server = app.listen(PORT, function() {
+        console.dir(prismicData.pages[3].getSliceZone('page.body').slices[0]);
+        console.dir(prismicData.pages[3].getSliceZone('page.body').slices[4]);
+
         var host = server.address().address;
         var port = server.address().port;
 

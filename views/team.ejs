@@ -1,4 +1,4 @@
-<section id="team" class="team">
+<section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'team') %>" class="team">
     <h1>Team</h1>
 <% for(var i = 0; i < team.length; i++) { var act = team[i]; %>
     <div>

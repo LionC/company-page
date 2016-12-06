@@ -28,8 +28,12 @@ input, select, button[type="submit"] {
     height: 34px;
     padding: 11px 5px 11px 5px;
     border-radius: 3px;
-    border: none;
+    border: 1px solid #ccc;
     background-color: white;
+}
+
+button[type="submit"] {
+    text-transform: uppercase;
 }
 
 button.icon-button {
@@ -286,7 +290,7 @@ nav ul.nav-links > li > ul {
 
         position: absolute;
         margin: 0;
-        padding: 6px;
+        padding: 15px 6px 6px 6px;
         min-width: 120px;
 
         list-style: none;
@@ -304,6 +308,7 @@ nav ul.nav-links > li > ul {
     nav ul.nav-links > li > ul > li {
         white-space: nowrap;
         display: inline-block;
+        width: 100%;
     }
 
     nav ul.nav-links > li > ul > li + li {
