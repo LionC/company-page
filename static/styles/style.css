@@ -19,7 +19,20 @@ a, a:hover, a:active {
     color: inherit;
 }
 
-button {
+/**
+* Interaction elements
+*/
+
+input, select, button[type="submit"] {
+    box-shadow: none;
+    height: 34px;
+    padding: 11px 5px 11px 5px;
+    border-radius: 3px;
+    border: none;
+    background-color: white;
+}
+
+button.icon-button {
     background-color: transparent;
     background-repeat: no-repeat;
     border: none;
@@ -432,13 +445,14 @@ section.img-text-pair, section.product {
 
 section.img-text-pair img, section.product img {
     width: 100%;
+    border-radius: 6px;
 }
 
 @media only screen and (min-width : 970px) {
     section.img-text-pair img, section.product img {
         width: auto;
         height: 300px;
-        padding: 0px 50px;
+        margin: 0px 50px;
 
         flex-direction: column;
     }
@@ -459,7 +473,7 @@ section.gallery > img {
     }
 }
 
-section.gallery, section.team, section.logos {
+section.gallery, section.team, section.logos, section.customer-contact-form {
     flex-wrap: wrap;
 }
 
@@ -481,11 +495,12 @@ section.logos > img {
     }
 }
 
-section.product > h2, section.gallery > h1, section.logos > h2 {
+section.product > h2, section.gallery > h1, section.logos > h2, section.customer-contact-form > h2 {
     flex-basis: 100%;
     text-align: center;
 
     margin-bottom: 25px;
+    margin-top: 0;
 }
 
 section.product {
@@ -498,21 +513,31 @@ section.team {
     text-align: center;
 }
 
+div.person {
+    text-align: center;
+}
+
 section.team > a, section.team > a:hover, section.team > a:active {
     display: block;
     text-decoration: none;
 }
 
-section.team > div, section.team > a {
-    width: 50%;
+section.team > div, div.person, section.team > a {
     margin-top: 22px;
     font-size: .7em;
 }
 
+section.team > div, section.team > a {
+    width: 50%;
+}
+
 @media only screen and (min-width : 970px) {
+    section.team > div, div.person, section.team > a {
+        font-size: 1em;
+    }
+
     section.team > div, section.team > a {
         width: 25%;
-        font-size: 1em;
     }
 }
 
@@ -521,20 +546,20 @@ section.team > h1 {
     margin-top: 0;
 }
 
-section.team > div > img, section.team > a > img {
+div.person > img, section.team > div > img, section.team > a > img {
     border-radius: 50%;
     width: 70%;
 }
 
-section.team > div > h4, section.team > a > h4 {
+div.person > h4, section.team > div > h4, section.team > a > h4 {
     margin: 15px 0 0 0;
 }
 
-section.team > div > p, section.team > div > h4, section.team > a > p, section.team > a > h4 {
+div.person > p, div.person > h4, section.team > div > p, section.team > div > h4, section.team > a > p, section.team > a > h4 {
     white-space: nowrap;
 }
 
-section.team > div > p, section.team > a > p {
+div.person > p, section.team > div > p, section.team > a > p {
     margin: 7px 0 0 0;
 }
 
@@ -717,5 +742,39 @@ section.success-stories > h2 {
 
     section.success-stories > div:nth-of-type(2) > p {
         align-self: flex-start;
+    }
+}
+
+@media only screen and (min-width : 970px) {
+    section.customer-contact-form {
+        align-items: flex-start;
+    }
+
+    section.customer-contact-form > div.person {
+        width: 33%;
+        align-self: center;
+    }
+
+    section.customer-contact-form > form {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    section.customer-contact-form > form > label {
+        margin-top: 10px;
+        display: block;
+        width: 45%;
+    }
+
+    section.customer-contact-form > form > label > input, section.customer-contact-form > form > label > select {
+        display: block;
+        width: 100%;
+    }
+
+    section.customer-contact-form > form button {
+        margin-top: 20px;
+        width: 100%;
     }
 }
