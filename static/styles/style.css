@@ -513,12 +513,17 @@ section.logos > img {
     }
 }
 
-section.product > h2, section.gallery > h1, section.logos > h2, section.contact-form > h2 {
-    flex-basis: 100%;
+section.product > h2, section.gallery > h1, section.logos > h2, section.contact-form > h2, section.traits > h2 {
     text-align: center;
 
     margin-bottom: 25px;
     margin-top: 0;
+}
+
+@media only screen and (min-width : 970px) {
+    section.product > h2, section.gallery > h1, section.logos > h2, section.contact-form > h2, section.traits > h2 {
+        flex-basis: 100%;
+    }
 }
 
 section.product {

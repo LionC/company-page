@@ -1,8 +1,11 @@
 <section class="traits">
-
     <%
     var traits = slice.value.toArray();
+    %>
 
+    <h2><%= traits[0].getText('heading-' + lang) %></h2>
+
+    <%
     traits.forEach(function (trait) {
     %>
         <div>
@@ -14,5 +17,5 @@
     <%
     });
     %>
-    
+
 </section>
