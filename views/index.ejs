@@ -42,34 +42,39 @@
                             <% } %>
                             href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
                         </a>
-                        <% if(p.getBoolean('page.hasSubNavigation')) { %>
-                        <ul>
+                        <%
+                        if(p.getBoolean('page.hasSubNavigation')) {
+                            %>
+                            <ul>
                             <%
                             var slices = p.getSliceZone('page.body').slices;
 
+                            function renderSubNavLink(navName) {
+                                %>
+                                <li>
+                                <a href="/<%= lang %>/<%= p.uid %>#<%- buildAnchor(navName) %>">
+                                <%= navName %>
+                                </a>
+                                </li>
+                                <%
+                            }
+
+                            var subLinks = [];
+
                             slices.forEach(function (slice) {
-
-                                function renderSubNavLink(navName) {
-                                    %>
-                                    <li>
-                                        <a href="/<%= lang %>/<%= p.uid %>#<%- buildAnchor(navName) %>">
-                                            <%= navName %>
-                                        </a>
-                                    </li>
-                                    <%
-                                }
-
                                 if(slice.sliceType == 'products') {
-                                    products.map(function (product) {
-                                        return product.getText('product.title-' + lang);
-                                    }).forEach(renderSubNavLink);
+                                    products.forEach(function (product) {
+                                        subLinks.push(product.getText('product.title-' + lang));
+                                    });
                                 } else {
                                     if(!!slice.value.toArray && !!slice.value.toArray()[0].getText('navigationName-' + lang))
-                                        renderSubNavLink(slice.value.toArray()[0].getText('navigationName-' + lang));
+                                    subLinks.push(slice.value.toArray()[0].getText('navigationName-' + lang));
                                 }
                             });
+
+                            subLinks.forEach(renderSubNavLink);
                             %>
-                        </ul>
+                            </ul>
                         <% } %>
                     </li>
                     <%
