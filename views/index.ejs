@@ -64,7 +64,8 @@
                                         return product.getText('product.title-' + lang);
                                     }).forEach(renderSubNavLink);
                                 } else {
-                                    renderSubNavLink((slice.value.toArray ? slice.value.toArray()[0].getText('navigationName-' + lang) : false) || slice.sliceType);
+                                    if(!!slice.value.toArray && !!slice.value.toArray()[0].getText('navigationName-' + lang))
+                                        renderSubNavLink(slice.value.toArray()[0].getText('navigationName-' + lang));
                                 }
                             });
                             %>
