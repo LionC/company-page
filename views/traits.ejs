@@ -1,0 +1,18 @@
+<section class="traits">
+
+    <%
+    var traits = slice.value.toArray();
+
+    traits.forEach(function (trait) {
+    %>
+        <div>
+            <div>
+                <%- trait.getStructuredText('content-' + lang).asHtml() %>
+            </div>
+            <img src="<%= trait.getImage('icon').url %>" alt="<%= trait.getImage('icon').asText() %>">
+        </div>
+    <%
+    });
+    %>
+    
+</section>

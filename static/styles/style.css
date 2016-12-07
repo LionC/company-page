@@ -33,6 +33,10 @@ input, select, button[type="submit"], textarea {
     background-color: white;
 }
 
+textarea {
+    resize: none;
+}
+
 input, select, button[type="submit"] {
     height: 34px;
 }
@@ -814,5 +818,50 @@ section.contact-form > form {
 
     section.contact-form > form > label.full-width {
         width: 100%;
+    }
+}
+
+section.traits {
+    justify-content: flex-start;
+}
+
+section.traits > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;;
+    align-items: center;
+
+    text-align: center;
+
+    width: 100%;
+}
+
+section.traits > div > img {
+    width: 30%;
+    margin-top: 34px;
+}
+
+section.traits > div > div > p {
+    text-align: left;
+}
+
+main section.traits:nth-child(even) > div > img {
+    filter: invert(100%);
+}
+
+@media only screen and (min-width : 970px) {
+    section.traits {
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    section.traits > div {
+        width: 27%;
+        height: 350px;
+    }
+
+    section.traits > div > img {
+        width: 90px;
+        margin-top: 0;
     }
 }
