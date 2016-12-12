@@ -28,9 +28,12 @@ input, select, button[type="submit"], textarea {
 
     box-shadow: none;
     border-radius: 3px;
-    border: 1px solid #ccc;
 
     background-color: white;
+}
+
+input, select, textarea {
+    border: 1px solid #ccc;
 }
 
 textarea {
@@ -39,10 +42,11 @@ textarea {
 
 input, select, button[type="submit"] {
     height: 34px;
+    cursor: pointer;
 }
 
 button[type="submit"] {
-    text-transform: uppercase;
+    border: none;
 }
 
 button.icon-button {
@@ -790,8 +794,14 @@ section.contact-form > form > label > input, section.contact-form > form > label
 }
 
 section.contact-form > form button {
-    margin-top: 20px;
+    margin-top: 50px;
     width: 100%;
+    height: 55px;
+
+    background-color: #65cb15;
+    vertical-align: middle;
+    font-size: 1.2em;
+    font-weight: 400;
 }
 
 section.contact-form > form {
