@@ -880,3 +880,14 @@ main section.traits:nth-child(even) > div > img {
         margin-top: 0;
     }
 }
+
+/*
+* Anchor Offset
+**/
+
+:target:before {
+    content: "";
+    display: block;
+    height: 100px;
+    margin: -500px 0 0;
+}
