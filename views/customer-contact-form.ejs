@@ -1,10 +1,17 @@
-<section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'customer-contact-form') %>" class="contact-form">
+<% var id = buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'customer-contact-form') %>
+<section id="<%= id %>" class="contact-form">
     <h2><%= slice.value.toArray()[0].getText('heading-' + lang) %></h2>
 
     <div class="person">
-        <img src="https://prismic-io.s3.amazonaws.com/aco-company-page/82fddba3066fac3407df3e8438009ea20923fbbd_161103_p1010655_sw_300dpi.jpg">
-        <h4>Isabell Heller</h4>
-        <p>Sales Key Account Manager</p>
+        <%
+        var teamMember = team.filter(function (member) {
+            return member.id == slice.value.toArray()[0].linkedDocuments()[0].id
+        })[0];
+        %>
+
+        <img src="<%= teamMember.getImage('team-member.image').url %>" alt="<%= teamMember.getText('team-member.name') %>">
+        <h4><%= teamMember.getText('team-member.name') %></h4>
+        <p><%= teamMember.getText('team-member.jobTitle') %></p>
     </div>
 
     <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">

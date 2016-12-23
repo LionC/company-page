@@ -1,19 +1,21 @@
-const assert = require('assert');
-const express = require('express');
-const bodyParser = require('body-parser');
-const compression = require('compression');
+const assert = require('assert')
+const express = require('express')
+const bodyParser = require('body-parser')
+const compression = require('compression')
+const request = require('request')
+const assertSuccessfulResponse = require('assert-successful-request')
 
-var prismicData = require('./prismic');
+var prismicData = require('./prismic')
 
-var PORT = process.env.PORT || 8080;
-var PRISMIC_SECRET = process.env.PRISMIC_SECRET || 'secret';
+var PORT = process.env.PORT || 8080
+var PRISMIC_SECRET = process.env.PRISMIC_SECRET || 'secret'
 
-var LANGUAGES = [ 'en', 'de' ];
-var TRANSLATIONS = require('./translations.json');
+var LANGUAGES = [ 'en', 'de' ]
+var TRANSLATIONS = require('./translations.json')
 
 function buildTranslationFunction(language) {
     return function translate(key) {
-        return TRANSLATIONS[key][language];
+        return TRANSLATIONS[key][language]
     }
 }
 
@@ -30,6 +32,14 @@ app.post('/api/prismic-webhook', bodyParser.json(), function (req, res) {
 
     prismicData.refetch();
     return res.status(200).send('');
+});
+
+app.post('/api/contact', bodyParser.urlencoded(), function(req, res) {
+    return request.post({
+        url: 'https://rest.acomodeo.com/api/inquiry',
+        json: true,
+        body: req.body
+    }).pipe(res)
 });
 
 //Default route

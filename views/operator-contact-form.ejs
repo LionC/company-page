@@ -2,9 +2,15 @@
     <h2><%= slice.value.toArray()[0].getText('heading-' + lang) %></h2>
 
     <div class="person">
-        <img src="https://prismic-io.s3.amazonaws.com/aco-company-page/33a2d857ed3a77b9b5f27bf43f3c44b5ddfd9572_acomodeo_aline_sw1.jpg">
-        <h4>Aline Halbritter</h4>
-        <p>Head of Sourcing</p>
+        <%
+        var teamMember = team.filter(function (member) {
+            return member.id == slice.value.toArray()[0].linkedDocuments()[0].id
+        })[0];
+        %>
+
+        <img src="<%= teamMember.getImage('team-member.image').url %>" alt="<%= teamMember.getText('team-member.name') %>">
+        <h4><%= teamMember.getText('team-member.name') %></h4>
+        <p><%= teamMember.getText('team-member.jobTitle') %></p>
     </div>
 
     <form action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">

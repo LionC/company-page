@@ -1,16 +1,26 @@
-<section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'general-contact-form') %>" class="contact-form">
-    <h2><%= slice.value.toArray()[0].getText('heading-' + lang) %></h2>
+<%
+var id = buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'customer-contact-form')
+var data = slice.value.toArray()[0]
+%>
+<section id="<%= id %>" class="contact-form">
+    <h2><%= data.getText('heading-' + lang) %></h2>
 
     <div class="person">
-        <img src="https://prismic-io.s3.amazonaws.com/aco-company-page/0fd157e47cb71a140ba2a2f0e67b7a92d0f058f1_alex.jpg">
-        <h4>Alexander Wissing</h4>
-        <p>Chief Service Officier</p>
+        <%
+        var teamMember = team.filter(function (member) {
+            return member.id == data.linkedDocuments()[0].id
+        })[0];
+        %>
+
+        <img src="<%= teamMember.getImage('team-member.image').url %>" alt="<%= teamMember.getText('team-member.name') %>">
+        <h4><%= teamMember.getText('team-member.name') %></h4>
+        <p><%= teamMember.getText('team-member.jobTitle') %></p>
     </div>
 
-    <form>
+    <form id="<%= id %>-form" method="POST" action="/api/contact">
         <label for="firstname">
             Name
-            <input id="firstname" maxlength="120" name="first_name" size="20" type="text" placeholder="Vorname" required>
+            <input id="firstname" maxlength="120" name="name" size="20" type="text" placeholder="Vorname" required>
         </label>
 
         <label for="email">
@@ -20,11 +30,33 @@
 
         <label class="full-width" for="text">
             <%= __('message') %>
-            <textarea id="text" name="text" rows="8" placeholder="Nachricht..." required></textarea>
+            <textarea id="text" name="message" rows="8" placeholder="Nachricht..." required></textarea>
         </label>
 
         <button type="submit">
             <%= __('send') %>
         </button>
     </form>
+
+    <script>
+    $('#<%= id %>-form').submit(function (e) {
+        e.preventDefault()
+        $.ajax({
+            url: '/api/contact',
+            type: 'post',
+            data: $('#<%= id %>-form').serialize(),
+            success: function () {
+                var dialog = $('<div id="__dialog" class="dialog"><div><h3><%= data.getText('message-heading-' + lang) %></h3><p><%= data.getText('message-' + lang) %></p></div></div>')
+
+                $('body').append(dialog)
+                $('#__dialog').toggleClass('active')
+
+                setTimeout(function () {
+                    $('#__dialog').toggleClass('active')
+                    $('#<%= id %>-form').trigger('reset');
+                }, 2500)
+            }
+        })
+    });
+    </script>
 </section>
