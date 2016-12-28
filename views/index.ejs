@@ -19,7 +19,7 @@
     <script type="application/ld+json">
         <%- include('company-jsonld'); %>
     </script>
-    
+
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </head>
 
@@ -127,7 +127,17 @@
                 <h1>Blog</h1>
             <% } else { %>
                 <%- page.getGroup('page.headerText').toArray()[0].getStructuredText(lang).asHtml() %>
+
+                <% if(page.getBoolean('page.headerHasButton')) { %>
+                    <button onclick="scrollTo('<%- page.getText('page.headerButtonScrollTarget') %>')"><%= page.getGroup('page.headerButtonCaption').toArray()[0].getText(lang) %></button>
+                    <script>
+                    function scrollTo(id) {
+                        $('html, body').animate({ scrollTop: $('#' + id).offset().top + 55 },'slow')
+                    }
+                    </script>
+                    <% } %>
             <% } %>
+
         </div>
     </header>
 
