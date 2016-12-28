@@ -24,8 +24,6 @@ a, a:hover, a:active {
 */
 
 input, select, button:not(.icon-button), textarea {
-    padding: 11px 5px 11px 5px;
-
     box-shadow: none;
     border-radius: 3px;
 
@@ -33,6 +31,8 @@ input, select, button:not(.icon-button), textarea {
 }
 
 input, select, textarea {
+    padding: 11px 5px 11px 5px;
+
     border: 1px solid #ccc;
 
     background-color: white;
@@ -427,6 +427,8 @@ header > div.container {
 header button {
     display: block;
     margin-left: auto;
+
+    padding: 15px 20px;
 
     font-size: .8em;
 }
@@ -875,7 +877,7 @@ section.contact-form > form > label > input, section.contact-form > form > label
 }
 
 section.contact-form > form button, header button {
-    height: 55px;
+    min-height: 55px;
 
     background-color: #7ac6b8;
     vertical-align: middle;
