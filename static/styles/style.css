@@ -28,6 +28,8 @@ input, select, button:not(.icon-button), textarea {
 
     box-shadow: none;
     border-radius: 3px;
+
+    font-family: Lato;
 }
 
 input, select, textarea {

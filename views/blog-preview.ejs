@@ -1,9 +1,19 @@
 <section id="blog-preview" class="blog-preview">
     <h1>Blog</h1>
-    <% for(var i = 0; i < slice.value.value; i++) { var act = blog[i]; if(!act) { break; } %>
+    <%
+    var self = slice.value.toArray()[0];
+    var tag = self.getText('tag');
+
+    for(var i = 0; i < self.getNumber('number'); i++) {
+        var act = blog[i];
+
+        if(!act) { break; }
+
+        if(tag == null || act.tags.indexOf(tag) != -1) {
+    %>
     <a href="blog/<%= act.uid %>"><div>
         <h2><%= act.getText('blog-post.title-' + lang) %></h2>
         <p><%= act.getStructuredText('blog-post.lead-' + lang).asText() %></p>
     </div></a>
-    <% } %>
+    <% }} %>
 </section>
