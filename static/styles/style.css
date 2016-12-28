@@ -388,6 +388,22 @@ nav .language-links > a.active, nav > .language-links > a:hover {
 }
 
 /*
+* Content tube
+*/
+
+main section, header {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media only screen and (min-width : 970px) {
+    main section, header {
+        padding-right: calc(50% - 485px);
+        padding-left: calc(50% - 485px);
+    }
+}
+
+/*
 * Header
 */
 
@@ -396,7 +412,8 @@ header {
 }
 
 header > div.container {
-    padding: 200px 0 200px 0;
+    padding-top: 200px;
+    padding-bottom: 200px;
 
     text-align: center;
     color: white;
@@ -485,15 +502,14 @@ main section {
     align-items: center;
     justify-content: space-between;
 
-    padding: 30px 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 @media only screen and (min-width : 970px) {
     main section {
         flex-direction: row;
 
-        padding-right: calc(50% - 485px);
-        padding-left: calc(50% - 485px);
         padding-top: 45px;
         padding-bottom: 45px;
     }
