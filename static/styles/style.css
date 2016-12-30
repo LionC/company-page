@@ -393,13 +393,13 @@ nav .language-links > a.active, nav > .language-links > a:hover {
 * Content tube
 */
 
-main section, header {
+main section, header, body > footer {
     padding-right: 15px;
     padding-left: 15px;
 }
 
 @media only screen and (min-width : 970px) {
-    main section, header {
+    main section, header, body > footer {
         padding-right: calc(50% - 485px);
         padding-left: calc(50% - 485px);
     }
@@ -421,12 +421,12 @@ header > div.container {
 
     color: white;
     background-color: rgba(64, 59, 89, .78);
-    border-radius: 6px;
+    /*border-radius: 6px;*/
 }
 
 header button {
     display: block;
-    margin-left: auto;
+    width: 100%;
 
     padding: 15px 20px;
 
@@ -445,6 +445,11 @@ header {
         display: flex;
         justify-content: flex-start;
         align-items: center;
+    }
+
+    header button {
+        width: auto;
+        margin-left: auto;
     }
 }
 
@@ -501,9 +506,52 @@ div.dialog.active {
 * Footer
 */
 
-html > footer {
-    background-color: #f0f0f0;
+body > footer {
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 27px;
+    padding-bottom: 27px;
+
+    background-color: #444444;
+    color: white;
     min-height: 55px;
+}
+
+body > footer > div > a, body > footer > div > a:active, body > footer > div > a:hover {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+
+    margin-top: 10px;
+}
+
+body > footer > img {
+    width: 100%;
+}
+
+@media only screen and (min-width : 970px) {
+    body > footer {
+        flex-direction: row;
+    }
+
+    body > footer > div + div {
+        margin-left: 40px;
+    }
+
+    body > footer > img {
+        align-self: center;
+
+        width: 80px;
+    }
+
+    body > footer > img:not(:first-child) {
+        margin-left: 40px;
+    }
+
+    body > footer > img:first-of-type:not(:first-child) {
+        margin-left: auto;
+    }
 }
 
 /*
