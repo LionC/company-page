@@ -1,4 +1,6 @@
 <section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'team') %>" class="team">
+    <input id="team_member_expand" type="checkbox">
+
     <h1>Team</h1>
 <% for(var i = 0; i < team.length; i++) { var act = team[i]; %>
     <div>
@@ -14,5 +16,7 @@
         <h4><%= lang == 'en' ? 'You?' : 'Du?' %></h4>
         <p><%= lang == 'en' ? 'Who knows ;-)' : 'Wer weiß ;-)' %></p>
     </a>
+
+    <label for="team_member_expand"></label>
 
 </section>

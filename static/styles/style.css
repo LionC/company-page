@@ -689,6 +689,38 @@ section.team > div, section.team > a {
     width: 50%;
 }
 
+section.team > input[type="checkbox"] {
+    display: none;
+}
+
+section.team > input[type="checkbox"]:not(:checked) ~ label::before {
+    content: 'Show More';
+}
+
+section.team > input[type="checkbox"]:checked ~ label::before {
+    content: 'Show Less';
+}
+
+section.team > label {
+    display: block;
+    flex-basis: 100%;
+
+    padding: 10px;
+    margin-top: 15px;
+
+    border: 1px solid white;
+    border-radius: 3px;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+section.team > input[type="checkbox"]:not(:checked) ~ div:nth-of-type(n+8) {
+    display: none;
+}
+
 @media only screen and (min-width : 970px) {
     section.team > div, div.person, section.team > a {
         font-size: 1em;
