@@ -518,6 +518,10 @@ body > footer {
     min-height: 55px;
 }
 
+body > footer * {
+    white-space: nowrap;
+}
+
 body > footer > div > a, body > footer > div > div, body > footer > div > a:active, body > footer > div > a:hover {
     display: block;
     color: inherit;
