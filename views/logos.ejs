@@ -4,8 +4,14 @@
     </h2>
     <%
     var sliceGroups = slice.value.toArray();
-    for(var i = 0; i < sliceGroups.length; i++) { var image = sliceGroups[i].getImage('image');
-    %>
-    <img src="<%= image.url %>" alt="iamge.asText()">
-    <% } %>
+    for(var i = 0; i < sliceGroups.length; i++) { var image = sliceGroups[i].getImage('image'); var link = sliceGroups[i].getText('link');
+
+        if(!!link) {
+        %>
+            <a href="<%= link %>"><img src="<%= image.url %>" alt="image.asText()"></a>
+        <% } else { %>
+            <img src="<%= image.url %>" alt="image.asText()">
+        <%
+        }
+    } %>
 </section>

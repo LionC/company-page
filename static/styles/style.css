@@ -624,19 +624,7 @@ section.img-text-pair img, section.product img {
     }
 }
 
-section.gallery > img {
-    width: 100%;
-    padding-top: 40px;
-    display: block;
-}
-
-@media only screen and (min-width : 970px) {
-    section.gallery > img {
-        width: 280px;
-    }
-}
-
-section.gallery, section.team, section.logos, section.contact-form {
+section.team, section.logos, section.contact-form {
     flex-wrap: wrap;
 }
 
@@ -644,16 +632,27 @@ section.logos {
     justify-content: space-around;
 }
 
-section.logos > img {
-    width: 100%;
+section.logos > a, section.logos > img {
+    display: block;
     margin-top: 30px;
+    width: 50%;
+}
+
+section.logos > a > img {
+    width: 100%;
 }
 
 @media only screen and (min-width : 970px) {
-    section.logos > img {
+    section.logos > a, section.logos > img {
+        display: block;
         margin-left: 10px;
         margin-right: 10px;
         height: 85px;
+        width: auto;
+    }
+
+    section.logos > a > img {
+        height: 100%;
         width: auto;
     }
 }
@@ -870,34 +869,6 @@ section.workflow > div.workflow-container > ul > li:not(:last-child) {
         min-width: 240px;
 
         order: initial;
-    }
-}
-
-@media only screen and (min-width : 970px) {
-    section.gallery {
-      justify-content: space-between;
-    }
-
-    section.gallery img {
-      transition: width .4s ease-in-out, opacity .4s ease-in-out;
-
-      height: 100%;
-      width: 16%;
-      object-fit: cover;
-      object-position: center center;
-      opacity: 1;
-
-      cursor: pointer;
-    }
-
-    section.gallery > img.expanded {
-      width: 100%;
-      z-index: 1;
-    }
-
-    section.gallery.expanded > img:not(.expanded) {
-      width: 0;
-      opacity: 0;
     }
 }
 

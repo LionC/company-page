@@ -1,10 +1,14 @@
-<section class="gallery">
+<section class="logos">
     <%
     var sliceGroups = slice.value.toArray();
+    for(var i = 0; i < sliceGroups.length; i++) { var image = sliceGroups[i].getImage('image'); var link = sliceGroups[i].getText('link');
 
-    for(var j = 0; j < sliceGroups.length; j++) {
-        var image = sliceGroups[j].getImage('image');
-        %><img src="<%= image.url %>" alt="<%= image.asText() %>"><%
-    }
-    %>
+        if(!!link) {
+        %>
+            <a href="<%= link %>"><img src="<%= image.url %>" alt="image.asText()"></a>
+        <% } else { %>
+            <img src="<%= image.url %>" alt="image.asText()">
+        <%
+        }
+    } %>
 </section>
