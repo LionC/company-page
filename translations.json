@@ -50,5 +50,49 @@
     "numberOfApartments": {
         "en": "Number of Apartments",
         "de": "Anzahl der Apartments"
+    },
+    "forOperators": {
+        "en": "For Operators",
+        "de": "Für Anbieter"
+    },
+    "forCustomers": {
+        "en": "For Customers",
+        "de": "Für Kunden"
+    },
+    "securitySustainability": {
+        "en": "Security & Sustainability",
+        "de": "Sicherheit & Nachhaltigkeit"
+    },
+    "help": {
+        "en": "Help",
+        "de": "Hilfe"
+    },
+    "press": {
+        "en": "Press",
+        "de": "Presse"
+    },
+    "legal": {
+        "en": "Legal",
+        "de": "Rechtliches"
+    },
+    "impress": {
+        "en": "Impress",
+        "de": "Impressum"
+    },
+    "agb": {
+        "en": "Terms & Conditions",
+        "de": "AGB"
+    },
+    "privacy": {
+        "en": "Privacy Policy",
+        "de": "Datenschutzbedingungen"
+    },
+    "followUs": {
+        "en": "Follow Us",
+        "de": "Folgen Sie Uns"
+    },
+    "securePayment": {
+        "en": "Secure Payment",
+        "de": "Sicher Bezahlen"
     }
 }

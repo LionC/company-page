@@ -518,7 +518,7 @@ body > footer {
     min-height: 55px;
 }
 
-body > footer > div > a, body > footer > div > a:active, body > footer > div > a:hover {
+body > footer > div > a, body > footer > div > div, body > footer > div > a:active, body > footer > div > a:hover {
     display: block;
     color: inherit;
     text-decoration: none;
