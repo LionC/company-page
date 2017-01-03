@@ -509,6 +509,7 @@ div.dialog.active {
 body > footer {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 
     padding-top: 27px;
     padding-bottom: 27px;
@@ -531,7 +532,12 @@ body > footer > div > a, body > footer > div > div, body > footer > div > a:acti
 }
 
 body > footer > img {
-    width: 100%;
+    width: 50%;
+    align-self: center;
+}
+
+body > footer > img + img {
+    margin: 10px;
 }
 
 @media only screen and (min-width : 970px) {
