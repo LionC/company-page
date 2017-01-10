@@ -31,11 +31,13 @@ input, select, button:not(.icon-button), textarea {
 }
 
 input, select, textarea {
-    padding: 11px 5px 11px 5px;
+    padding: 11px 8px 11px 8px;
 
     border: 1px solid #ccc;
 
     background-color: white;
+
+    font-size: .85rem;
 }
 
 textarea {
@@ -1023,6 +1025,7 @@ main section.traits:nth-child(even) > div > img {
     section.traits > div {
         width: 27%;
         height: 350px;
+        margin-top: 50px;
     }
 
     section.traits > div > img {

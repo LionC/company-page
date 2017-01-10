@@ -1,6 +1,9 @@
 <section class="logos">
     <%
     var sliceGroups = slice.value.toArray();
+    %>
+    <h2><%= sliceGroups[0].getText('heading-' + lang) %></h2>
+    <%
     for(var i = 0; i < sliceGroups.length; i++) { var image = sliceGroups[i].getImage('image'); var link = sliceGroups[i].getText('link');
 
         if(!!link) {

@@ -133,7 +133,7 @@ function buildLanguageLinks(path) {
     var ret = {};
 
     LANGUAGES.forEach(function (language) {
-        ret[language] = '/' + language + relativePath;
+        ret[language] = '/../' + language + relativePath;
     });
 
     return ret;

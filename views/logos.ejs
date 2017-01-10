@@ -1,9 +1,11 @@
 <section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'logos') %>" class="logos">
-    <h2>
-        <%= lang == 'en' ? 'Our Partners' : 'Unsere Partner' %>
-    </h2>
     <%
     var sliceGroups = slice.value.toArray();
+    %>
+    <h2>
+        <%= sliceGroups[0].getText('heading-' + lang) %>
+    </h2>
+    <%
     for(var i = 0; i < sliceGroups.length; i++) { var image = sliceGroups[i].getImage('image'); var link = sliceGroups[i].getText('link');
 
         if(!!link) {

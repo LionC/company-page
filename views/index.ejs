@@ -16,6 +16,8 @@
 
     <link rel="icon" type="image/png" href="/favicon.png" />
 
+    <base href="/<%= lang %>/">
+
     <script type="application/ld+json">
         <%- include('company-jsonld'); %>
     </script>
@@ -51,7 +53,7 @@
                             <% if((template == 'blog-post') ?  (p.uid == 'blog') : (page.uid == p.uid)) { %>
                                 class="active"
                             <% } %>
-                            href="/<%= lang %>/<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
+                            href="<%= p.uid %>"><%= p.getGroup('page.navigationName').toArray()[0].getText(lang) %>
                         </a>
                         <%
                         if(p.getBoolean('page.hasSubNavigation')) {
@@ -63,7 +65,7 @@
                             function renderSubNavLink(navName) {
                                 %>
                                 <li>
-                                <a href="/<%= lang %>/<%= p.uid %>#<%- buildAnchor(navName) %>">
+                                <a href="<%= p.uid %>#<%- buildAnchor(navName) %>">
                                 <%= navName %>
                                 </a>
                                 </li>
@@ -84,6 +86,17 @@
                             });
 
                             subLinks.forEach(renderSubNavLink);
+
+                            var additionalLinks = p.getGroup('page.dropdownNavLinks');
+
+                            if(additionalLinks) {
+                                additionalLinks = additionalLinks.toArray();
+
+                                additionalLinks.forEach(function (link) {
+                                    %><li><a href="<%= link.getText('link') %>"><%= link.getText('linkCaption-' + lang) %></a></li><%
+                                });
+                            }
+
                             %>
                             </ul>
                         <% } %>
@@ -190,13 +203,18 @@
 
         function offsetAnchor() {
             if(location.hash.length != 0)
-                window.scrollTo(window.scrollX, window.scrollY - 70);
+                window.scrollTo(window.scrollX, window.scrollY - 300);
         }
 
-        window.addEventListener("hashchange", offsetAnchor);
+        window.addEventListener('hashchange', offsetAnchor);
         window.setTimeout(offsetAnchor, 50);
 
-        $(document).ready(function () { $('a').each(function () { this.href = this.href.replace(/^http:\/\/l\//, '/<%= lang %>/') }) })
+        //replace internal /l links with correct language links
+        $(document).ready(function () { $('a').each(function () {
+                if( this.hostname.length && location.hostname != this.hostname )
+                    this.target = '_blank'
+            })
+        })
     </script>
 
 </body>
