@@ -200,7 +200,6 @@ nav .nav-container {
     justify-content: center;
 
     background-color: #958ca0;
-    color: white;
 
     opacity: 0;
     pointer-events: none;
@@ -252,9 +251,10 @@ nav ul.nav-links > li > ul {
 
 @media only screen and (min-width : 970px) {
     nav {
-        transition: color .3s ease-in, background-color .3s ease-in, border-color .3s ease-in, min-height .3s ease-in;
+        transition: background-color .3s ease-in, border-color .3s ease-in, min-height .3s ease-in;
         background-color: rgba(255, 255, 255, 0);
         min-height: 110px;
+        color: black;
     }
 
     nav > img {
@@ -267,7 +267,6 @@ nav ul.nav-links > li > ul {
     }
 
     nav.scrolled {
-        color: black;
         background-color: rgba(255,255,255,1);
         border-color: rgba(0,0,0,.2);
         min-height: 55px;
@@ -282,7 +281,6 @@ nav ul.nav-links > li > ul {
         height: 100%;
 
         background-color: transparent;
-        color: inherit;
 
         flex-direction: row;
         justify-content: flex-start;
@@ -346,23 +344,19 @@ nav ul.nav-links > li > ul {
     }
 }
 
-nav ul.nav-links > li:nth-child(5n) > a.active, nav > ul.nav-links > li:nth-child(5n) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n) > a:hover {
-    color: #f6eecd;
-}
-
-nav ul.nav-links > li:nth-child(5n+1) > a.active, nav > ul.nav-links > li:nth-child(5n+1) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+1) > a:hover {
+nav ul.nav-links > li:nth-child(4n) > a.active, nav > ul.nav-links > li:nth-child(5n) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n) > a:hover {
     color: #ee754d;
 }
 
-nav ul.nav-links > li:nth-child(5n+2) > a.active, nav > ul.nav-links > li:nth-child(5n+2) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+2) > a:hover {
+nav ul.nav-links > li:nth-child(4n+1) > a.active, nav > ul.nav-links > li:nth-child(5n+1) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+1) > a:hover {
     color: #7ac6b8;
 }
 
-nav ul.nav-links > li:nth-child(5n+3) > a.active, nav > ul.nav-links > li:nth-child(5n+3) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+3) > a:hover {
+nav ul.nav-links > li:nth-child(4n+2) > a.active, nav > ul.nav-links > li:nth-child(5n+2) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+2) > a:hover {
     color: #f9b000;
 }
 
-nav ul.nav-links > li:nth-child(5n+4) > a.active, nav > ul.nav-links > li:nth-child(5n+4) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+4) > a:hover {
+nav ul.nav-links > li:nth-child(4n+3) > a.active, nav > ul.nav-links > li:nth-child(5n+3) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+3) > a:hover {
     color: #3dacbe;
 }
 
