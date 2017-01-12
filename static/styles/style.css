@@ -344,19 +344,19 @@ nav ul.nav-links > li > ul {
     }
 }
 
-nav ul.nav-links > li:nth-child(4n) > a.active, nav > ul.nav-links > li:nth-child(5n) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n) > a:hover {
+nav ul.nav-links > li:nth-child(4n) > a.active, nav ul.nav-links > li:nth-child(4n) > a:hover, nav ul.nav-links > li > ul > li:nth-child(4n) > a:hover {
     color: #ee754d;
 }
 
-nav ul.nav-links > li:nth-child(4n+1) > a.active, nav > ul.nav-links > li:nth-child(5n+1) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+1) > a:hover {
+nav ul.nav-links > li:nth-child(4n+1) > a.active, nav ul.nav-links > li:nth-child(4n+1) > a:hover, nav ul.nav-links > li > ul > li:nth-child(4n+1) > a:hover {
     color: #7ac6b8;
 }
 
-nav ul.nav-links > li:nth-child(4n+2) > a.active, nav > ul.nav-links > li:nth-child(5n+2) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+2) > a:hover {
+nav ul.nav-links > li:nth-child(4n+2) > a.active, nav ul.nav-links > li:nth-child(4n+2) > a:hover, nav ul.nav-links > li > ul > li:nth-child(4n+2) > a:hover {
     color: #f9b000;
 }
 
-nav ul.nav-links > li:nth-child(4n+3) > a.active, nav > ul.nav-links > li:nth-child(5n+3) > a:hover, nav ul.nav-links > li > ul > li:nth-child(5n+3) > a:hover {
+nav ul.nav-links > li:nth-child(4n+3) > a.active, nav ul.nav-links > li:nth-child(4n+3) > a:hover, nav ul.nav-links > li > ul > li:nth-child(4n+3) > a:hover {
     color: #3dacbe;
 }
 
