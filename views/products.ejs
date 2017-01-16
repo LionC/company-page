@@ -1,5 +1,5 @@
 <% for(var i = 0; i < products.length; i++) { var act = products[i]; %>
-<section id="<%- buildAnchor(act.getText('product.title-' + lang)) %>" class="product">
+<section id="<%- buildAnchor(act.getText('product.title-en')) %>" class="product">
     <h2>
         <%= act.getText('product.title-' + lang) %><br>
         <small><%= act.getText('product.subtitle-' + lang) %></small>
