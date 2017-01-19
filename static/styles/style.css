@@ -916,6 +916,7 @@ section.workflow > ul > li > hr {
     section.workflow > ul > li:nth-child(2n) {
         margin-left: calc(50% - 4px);
         padding-left: 30px;
+        border-left: 8px dotted white;
     }
 
     section.workflow > ul > li:nth-child(2n) > hr {
