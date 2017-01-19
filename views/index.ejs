@@ -36,7 +36,7 @@
         </div>
     </div>
 
-    <nav>
+    <nav class="scrolled">
         <img src="https://static.acomodeo.com/images/logo-small.png" alt="Acomodeo">
 
         <div class="nav-container">
@@ -187,19 +187,19 @@
             <div><img src="/assets/images/mastercard.png" alt="Mastercard"> MasterCard</div>
             <div><img src="/assets/images/visa.png" alt="Visa"> VISA</div>
         </div>
-        <img src="/assets/images/pci.png" alt="">
-        <img src="/assets/images/renewable.png" alt="">
+        <img src="/assets/images/pci.png" alt="PCI Certificate">
+        <img src="/assets/images/renewable.png" alt="ECO Certificate">
     </footer>
 
     <script>
-        var nav = $('nav');
-
-        $(window).scroll(function() {
-            if ((document.documentElement.scrollTop || document.body.scrollTop) > 100)
-                nav.addClass('scrolled');
-            else
-                nav.removeClass('scrolled');
-        });
+        // var nav = $('nav');
+        //
+        // $(window).scroll(function() {
+        //     if ((document.documentElement.scrollTop || document.body.scrollTop) > 100)
+        //         nav.addClass('scrolled');
+        //     else
+        //         nav.removeClass('scrolled');
+        // });
 
         function offsetAnchor() {
             if(location.hash.length != 0)

@@ -1,7 +1,8 @@
-<section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'team') %>" class="team">
+<% var id = buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'team') %>
+<section id="<%- id %>" class="team">
     <input id="team_member_expand" type="checkbox">
 
-    <h1>Team</h1>
+    <h2>Team</h2>
 <% for(var i = 0; i < team.length; i++) { var act = team[i]; %>
     <div>
         <img src="<%= act.getImage('team-member.image').url %>" alt="<%= act.getText('team-member.name') %>">
@@ -12,11 +13,21 @@
 <% } %>
 
     <a href="https://acomodeo.has-jobs.com/">
-        <img src="http://trafficmillionairesummit.com/event/wp-content/uploads/2016/02/mr-X.jpeg">
+        <img src="/assets/images/you.jpeg" alt="Join Us">
         <h4><%= lang == 'en' ? 'You?' : 'Du?' %></h4>
-        <p><%= lang == 'en' ? 'Who knows ;-)' : 'Wer weiß ;-)' %></p>
+        <p><%= lang == 'en' ? 'Join our Team' : 'Werde Teil unseres Teams' %></p>
     </a>
 
-    <label for="team_member_expand"></label>
+    <script>
+    function onTeamExpandClick() {
+        console.log('ASDF')
+
+        if(document.getElementById('team_member_expand').checked)
+            document.getElementById('<%- id %>').scrollIntoView()
+    }
+    </script>
+
+    <label onclick="onTeamExpandClick()" for="team_member_expand"></label>
+
 
 </section>

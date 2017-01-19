@@ -308,7 +308,7 @@ nav ul.nav-links > li > ul {
 
         position: absolute;
         margin: 0;
-        padding: 15px 6px 6px 6px;
+        padding: 15px 11px 24px 11px;
         min-width: 120px;
 
         list-style: none;
@@ -620,6 +620,11 @@ section.img-text-pair img, section.product img {
     }
 }
 
+section.logos {
+    padding-right: 45px;
+    padding-left: 45px;
+}
+
 section.team, section.logos, section.contact-form {
     flex-wrap: wrap;
 }
@@ -630,7 +635,6 @@ section.logos {
 
 section.logos > a, section.logos > img {
     display: block;
-    margin-top: 30px;
     width: 50%;
 }
 
@@ -736,7 +740,7 @@ section.team > input[type="checkbox"]:not(:checked) ~ div:nth-of-type(n+8) {
     }
 }
 
-section.team > h1 {
+section.team > h2 {
     flex-basis: 100%;
     margin-top: 0;
 }
@@ -762,7 +766,7 @@ section.blog-preview {
     flex-direction: column;
 }
 
-section.blog-preview h1 {
+section.blog-preview > h2 {
     margin-top: 0;
     text-align: center;
 }
@@ -773,13 +777,49 @@ section.blog-preview img {
     object-fit: cover;
 }
 
-section.blog-preview > a, section.blog-preview > a:hover, section.blog-preview > a:active {
-    text-decoration: none;
-}
-
 @media only screen and (min-width : 970px) {
-    section.blog-preview div {
-        max-width: 550px;
+    section.blog-preview > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    section.blog-preview > div {
+        margin-top: 70px;
+    }
+
+    section.blog-preview > div:nth-child(2n+1) {
+        flex-direction: row-reverse;
+    }
+
+    section.blog-preview > div:nth-child(2n+1) > div {
+        text-align: right;
+    }
+
+    section.blog-preview > div > div {
+        width: 500px;
+    }
+
+    section.blog-preview > div > img {
+        display: block;
+        width: 300px;
+        height: 200px;
+
+        margin-left: 0;
+        margin-right: 20px;
+    }
+
+    section.blog-preview > div:nth-child(2n+1) > img {
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+    section.blog-preview > div > div > h2 {
+        margin-top: 0;
+    }
+
+    section.blog-preview > div > div > h2 > a {
+        text-decoration: none;
     }
 }
 

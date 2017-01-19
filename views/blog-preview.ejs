@@ -1,5 +1,5 @@
 <section id="blog-preview" class="blog-preview">
-    <h1>Blog</h1>
+    <h2>Blog</h2>
     <%
     var self = slice.value.toArray()[0];
     var tag = self.getText('tag');
@@ -11,9 +11,17 @@
 
         if(tag == null || act.tags.indexOf(tag) != -1) {
     %>
-    <a href="blog/<%= act.uid %>"><div>
-        <h2><%= act.getText('blog-post.title-' + lang) %></h2>
-        <p><%= act.getStructuredText('blog-post.lead-' + lang).asText() %></p>
-    </div></a>
+    <div>
+        <img src="<%= act.getImage('blog-post.previewImage').url %>" alt="<%= act.getImage('blog-post.previewImage').asText() %>">
+        <div>
+            <h2>
+                <a href="blog/<%= act.uid %>">
+                    <%= act.getText('blog-post.title-' + lang) %>
+                </a>
+            </h2>
+            <p><%= act.getStructuredText('blog-post.lead-' + lang).asText() %></p>
+            <a href="blog/<%= act.uid %>">Read more...</a>
+        </div>
+    </div>
     <% }} %>
 </section>

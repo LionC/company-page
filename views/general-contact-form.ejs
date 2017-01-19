@@ -15,6 +15,7 @@ var data = slice.value.toArray()[0]
         <img src="<%= teamMember.getImage('team-member.image').url %>" alt="<%= teamMember.getText('team-member.name') %>">
         <h4><%= teamMember.getText('team-member.name') %></h4>
         <p><%= teamMember.getText('team-member.jobTitle') %></p>
+        <p>+49 69 400 500 30</p>
     </div>
 
     <form id="<%= id %>-form" method="POST" action="/api/contact">
