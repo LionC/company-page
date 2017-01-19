@@ -1,12 +1,17 @@
 <section class="blog-preview">
     <h1>Blog</h1>
     <% for(var i = 0; i < blog.length; i++) { var act = blog[i]; %>
-    <a href="blog/<%= act.uid %>">
+    <div>
+        <img src="<%= act.getImage('blog-post.previewImage').url %>" alt="<%= act.getImage('blog-post.previewImage').asText() %>">
         <div>
-            <h2><%= act.getText('blog-post.title-' + lang) %></h2>
-            <img src="<%= act.getImage('blog-post.previewImage').url %>" alt="<%= act.getImage('blog-post.previewImage').asText() %>">
+            <h2>
+                <a href="blog/<%= act.uid %>">
+                    <%= act.getText('blog-post.title-' + lang) %>
+                </a>
+            </h2>
             <p><%= act.getStructuredText('blog-post.lead-' + lang).asText() %></p>
+            <a href="blog/<%= act.uid %>">Read more...</a>
         </div>
-    </a>
+    </div>
     <% } %>
 </section>

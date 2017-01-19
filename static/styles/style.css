@@ -591,10 +591,6 @@ main section:nth-child(even) {
     background-color: #e8e6eb; /* bcb7c4 */
 }
 
-main section:nth-child(even) small {
-    color: #DDD;
-}
-
 section.img-text-pair, section.product {
     justify-content: flex-start;
     flex-wrap: nowrap;
@@ -983,6 +979,10 @@ section.success-stories > div.shown {
         display: block;
         opacity: 1;
     }
+}
+
+section.success-stories > img {
+    display: none;
 }
 
 @media only screen and (min-width : 970px) {
