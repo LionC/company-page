@@ -4,13 +4,45 @@
     %>
     <h2><%= sliceGroup.getText('heading-' + lang) %></h2>
     <% for(var i = 0; i < successStories.length; i++) { var successStory = successStories[i]; %>
-    <div>
-        <img src="<%= successStory.getImage('success-story.logo').url %>" alt="<%= successStory.getImage('success-story.logo').asText()%>">
+    <div class="shown">
         <img class="circle" src="<%= successStory.getImage('success-story.portrait').url %>" alt="<%= successStory.getImage('success-story.portrait').asText() %>">
-        <blockquote>
-            <p><%= successStory.getText('success-story.quote-' + lang) %></p>
-            <footer><%= successStory.getText('success-story.author') %></footer>
-        </blockquote>
+        <div>
+            <img src="<%= successStory.getImage('success-story.logo').url %>" alt="<%= successStory.getImage('success-story.logo').asText()%>">
+            <blockquote>
+                <p><%= successStory.getText('success-story.quote-' + lang) %></p>
+                <footer><%= successStory.getText('success-story.author') %></footer>
+            </blockquote>
+        </div>
     </div>
     <% } %>
+    <img src="/assets/images/left-arrow.svg" onclick="rotateReferences(true)">
+    <img src="/assets/images/right-arrow.svg" onclick="rotateReferences(false)">
+
+    <script>
+        var rotateReferences = (function() {
+            var interval = setInterval(rotateReferences, 5500)
+
+            return function rotateReferences(reverse) {
+                var active = $('section.success-stories > div.shown').removeClass('shown').removeClass('fadeIn')
+
+                if(reverse)
+                    var next = active.prev('div')
+                else
+                    var next = active.next('div')
+
+                if(next && next.length > 0)
+                    next.addClass('shown')
+
+                if(reverse)
+                    active.siblings('div:last-of-type').addClass('shown').addClass('fadeIn')
+                else
+                    active.siblings('div:first-of-type').addClass('shown').addClass('fadeIn')
+
+                clearInterval(interval)
+                interval = setInterval(rotateReferences, 5500)
+            }
+        })()
+
+    </script>
+
 </section>
