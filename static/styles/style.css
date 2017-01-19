@@ -868,43 +868,59 @@ section.workflow > h2 {
     margin-bottom: 40px;
 }
 
-section.workflow > div.workflow-container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;;
-    justify-content: flex-start;
+section.workflow > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-section.workflow > div.workflow-container > ul {
-    margin-left: 18px;
+section.workflow > ul > li {
+    display: block;
+}
+
+section.workflow > ul > li > :first-child {
     margin-top: 0;
+}
 
-    list-style: none;
+section.workflow > ul > li > :last-child {
+    margin-bottom: 0;
+}
 
+section.workflow > ul > li {
+    text-align: left;
+}
+
+section.workflow > ul > li > hr {
     display: none;
 }
 
-section.workflow > div.workflow-container > ul:first-of-type {
-    font-size: 1.3em;
-
-    display: block;
-
-    order: 1;
-}
-
-section.workflow > div.workflow-container > ul > li:not(:last-child) {
-    height: 105px;
-}
-
 @media only screen and (min-width : 970px) {
-    section.workflow > div.workflow-container > ul {
+    section.workflow > ul > li > hr {
         display: block;
+        margin: 0;
+        padding: 0;
     }
 
-    section.workflow > div.workflow-container > ul:first-of-type {
-        min-width: 240px;
+    section.workflow > ul > li:nth-child(2n+1) {
+        text-align: right;
+        margin-right: calc(50% - 4px);
+        padding-right: 30px;
+        border-right: 8px dotted white;
+    }
 
-        order: initial;
+    section.workflow > ul > li:nth-child(2n+1) > hr {
+        margin-left: 45%;
+        margin-right: -16px;
+    }
+
+    section.workflow > ul > li:nth-child(2n) {
+        margin-left: calc(50% - 4px);
+        padding-left: 30px;
+    }
+
+    section.workflow > ul > li:nth-child(2n) > hr {
+        margin-right: 45%;
+        margin-left: -16px;
     }
 }
 

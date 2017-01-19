@@ -1,22 +1,12 @@
 <section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'workflow') %>" class="workflow">
     <h2><%= workflow.getText('onboarding-workflow.heading-' + lang) %></h2>
-    <div class="workflow-container">
-        <ul>
-            <% for(var i = 1; i <= 5; i++) { %>
-            <li>
-            <%= workflow.getText('onboarding-workflow.step' + i + '-caption-' + lang) %>
-            </li>
-            <% } %>
-        </ul>
-
-        <img src="/assets/images/workflow.png">
-
-        <ul>
-            <% for(var i = 1; i <= 5; i++) { %>
-                <li>
-                <%= workflow.getText('onboarding-workflow.step' + i + '-text-' + lang) %>
-                </li>
-                <% } %>
-        </ul>
-    </div>
+    <ul>
+        <% for(var i = 1; i <= 5; i++) { %>
+        <li>
+            <hr />
+            <h3><%= workflow.getText('onboarding-workflow.step' + i + '-caption-' + lang) %></h3>
+            <p><%= workflow.getText('onboarding-workflow.step' + i + '-text-' + lang) %></p>
+        </li>
+        <% } %>
+    </ul>
 </section>
