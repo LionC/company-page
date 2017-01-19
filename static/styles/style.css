@@ -588,8 +588,7 @@ main section {
 }
 
 main section:nth-child(even) {
-    background-color: #958ca0; /* bcb7c4 */
-    color: white;
+    background-color: #e8e6eb; /* bcb7c4 */
 }
 
 main section:nth-child(even) small {
@@ -716,9 +715,6 @@ section.team > label {
 
     padding: 10px;
     margin-top: 15px;
-
-    border: 1px solid white;
-    border-radius: 3px;
 
     text-transform: uppercase;
     text-align: center;
@@ -929,7 +925,7 @@ section.workflow > ul > li > hr {
         text-align: right;
         margin-right: calc(50% - 4px);
         padding-right: 30px;
-        border-right: 8px dotted white;
+        border-right: 8px dotted black;
     }
 
     section.workflow > ul > li:nth-child(2n+1) > hr {
@@ -940,7 +936,7 @@ section.workflow > ul > li > hr {
     section.workflow > ul > li:nth-child(2n) {
         margin-left: calc(50% - 4px);
         padding-left: 30px;
-        border-left: 8px dotted white;
+        border-left: 8px dotted black;
     }
 
     section.workflow > ul > li:nth-child(2n) > hr {
@@ -1094,10 +1090,6 @@ section.traits > div {
 section.traits > div > img {
     width: 50%;
     margin-bottom: 22px;
-}
-
-main section.traits:nth-child(even) > div > img {
-    filter: invert(100%);
 }
 
 @media only screen and (min-width : 970px) {
