@@ -1,12 +1,17 @@
-<section id="<%- buildAnchor(slice.value.toArray()[0].getText('navigationName-en') || 'workflow') %>" class="workflow">
-    <h2><%= workflow.getText('onboarding-workflow.heading-' + lang) %></h2>
+<section id="workflow" class="workflow">
+    <%
+    var sliceGroups = slice.value.toArray();
+    %>
+    <h2><%= sliceGroups[0].getText('sectionHeading-' + lang) %></h2>
     <ul>
-        <% for(var i = 1; i <= 5; i++) { %>
+    <%
+    for(var i = 0; i < sliceGroups.length; i++) { var act = sliceGroups[i];
+    %>
         <li>
             <hr />
-            <h3><%= workflow.getText('onboarding-workflow.step' + i + '-caption-' + lang) %></h3>
-            <p><%= workflow.getText('onboarding-workflow.step' + i + '-text-' + lang) %></p>
+            <h3><%= act.getText('heading-' + lang) %></h3>
+            <p><%- act.getStructuredText('content-' + lang).asHtml() %></p>
         </li>
-        <% } %>
+    <% } %>
     </ul>
 </section>
