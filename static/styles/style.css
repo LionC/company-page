@@ -427,7 +427,6 @@ header button {
     padding: 15px 20px;
 
     font-size: .8em;
-    color: white;
 }
 
 header {
@@ -1076,6 +1075,7 @@ section.contact-form > form button, header button {
     min-height: 55px;
 
     background-color: #5cb85c;
+    color: white;
     vertical-align: middle;
     font-weight: 400;
 }
