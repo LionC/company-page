@@ -891,7 +891,7 @@ section.workflow > ul > li > hr {
         position: relative;
     }
 
-    section.workflow > ul > li:nth-of-type(2) {
+    /*section.workflow > ul > li:nth-of-type(2) {
         top: -45px;
     }
 
@@ -909,7 +909,7 @@ section.workflow > ul > li > hr {
 
     section.workflow > ul > li:nth-of-type(6) {
         top: -225px;
-    }
+    }*/
 
     section.workflow > ul > li > hr {
         display: block;

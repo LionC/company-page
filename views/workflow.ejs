@@ -13,23 +13,5 @@
             <p><%- act.getStructuredText('content-' + lang).asHtml() %></p>
         </li>
     <% } %>
-    <%
-    for(var i = 0; i < sliceGroups.length; i++) { var act = sliceGroups[i];
-    %>
-        <li>
-            <hr />
-            <h3><%= act.getText('heading-' + lang) %></h3>
-            <p><%- act.getStructuredText('content-' + lang).asHtml() %></p>
-        </li>
-    <% } %>
-    <%
-    for(var i = 0; i < sliceGroups.length; i++) { var act = sliceGroups[i];
-    %>
-        <li>
-            <hr />
-            <h3><%= act.getText('heading-' + lang) %></h3>
-            <p><%- act.getStructuredText('content-' + lang).asHtml() %></p>
-        </li>
-    <% } %>
     </ul>
 </section>

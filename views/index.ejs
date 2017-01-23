@@ -209,10 +209,12 @@
         window.addEventListener('hashchange', offsetAnchor);
         window.setTimeout(offsetAnchor, 50);
 
-        //replace internal /l links with correct language links
         $(document).ready(function () { $('a').each(function () {
-                if( this.hostname.length && location.hostname != this.hostname )
-                    this.target = '_blank'
+                if( this.getAttribute('href').indexOf('//') != -1 )
+                    if(this.hostname.indexOf('.') != -1)
+                        this.target = '_blank'
+                    else
+                        this.href = this.href.substring(this.href.indexOf('//') + 2)
             })
         })
     </script>
