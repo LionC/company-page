@@ -137,7 +137,7 @@
     <header>
         <div class="container">
             <% if(template == 'blog-post') { %>
-                <h1>Blog</h1>
+                <h1><%= blogPost.getText('blog-post.title-' + lang) %></h1>
             <% } else { %>
                 <%- page.getGroup('page.headerText').toArray()[0].getStructuredText(lang).asHtml() %>
 

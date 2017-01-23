@@ -1,6 +1,4 @@
 <section class="blog-post">
-    <h1><%= blogPost.getText('blog-post.title-' + lang) %></h1>
-
     <div class="blog-lead">
         <%- blogPost.getStructuredText('blog-post.lead-' + lang).asHtml() %>
     </div>
