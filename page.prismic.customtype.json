@@ -1,0 +1,647 @@
+{
+  "Metadata" : {
+    "uid" : {
+      "type" : "UID",
+      "fieldset" : "UID (URL)"
+    },
+    "isInNavigation" : {
+      "type" : "Select",
+      "config" : {
+        "label" : "Shows in Main Navigation",
+        "options" : [ "yes", "no" ],
+        "placeholder" : "yes"
+      }
+    },
+    "hasSubNavigation" : {
+      "type" : "Select",
+      "config" : {
+        "label" : "Has Sub (Dropdown) Navigation",
+        "options" : [ "yes", "no" ],
+        "placeholder" : "yes"
+      }
+    },
+    "navigationName" : {
+      "type" : "Group",
+      "fieldset" : "Navigation Name",
+      "config" : {
+        "repeat" : false,
+        "fields" : {
+          "en" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "English"
+            }
+          },
+          "de" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "German"
+            }
+          }
+        }
+      }
+    },
+    "title" : {
+      "type" : "Group",
+      "fieldset" : "Page Title",
+      "config" : {
+        "repeat" : false,
+        "fields" : {
+          "en" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "English"
+            }
+          },
+          "de" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "German"
+            }
+          }
+        }
+      }
+    },
+    "description" : {
+      "type" : "Group",
+      "fieldset" : "Description",
+      "config" : {
+        "repeat" : false,
+        "fields" : {
+          "en" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "English"
+            }
+          },
+          "de" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "German"
+            }
+          }
+        }
+      }
+    },
+    "changeFrequency" : {
+      "type" : "Select",
+      "fieldset" : "Change Frequency (SEO)",
+      "config" : {
+        "options" : [ "always", "hourly", "daily", "weekly", "monthly", "yearly", "never" ]
+      }
+    },
+    "priority" : {
+      "type" : "Select",
+      "fieldset" : "Priority (SEO)",
+      "config" : {
+        "options" : [ "0.0", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0" ],
+        "placeholder" : "0.5"
+      }
+    }
+  },
+  "Content" : {
+    "headerImage" : {
+      "type" : "Image",
+      "fieldset" : "Header Image"
+    },
+    "headerText" : {
+      "type" : "Group",
+      "fieldset" : "Header Text (English/German)",
+      "config" : {
+        "repeat" : false,
+        "fields" : {
+          "en" : {
+            "type" : "StructuredText",
+            "config" : {
+              "placeholder" : "English"
+            }
+          },
+          "de" : {
+            "type" : "StructuredText",
+            "config" : {
+              "placeholder" : "German"
+            }
+          }
+        }
+      }
+    },
+    "headerHasButton" : {
+      "type" : "Select",
+      "config" : {
+        "label" : "Header has Button",
+        "options" : [ "yes", "no" ],
+        "placeholder" : "yes"
+      }
+    },
+    "headerButtonScrollTarget" : {
+      "type" : "Text",
+      "config" : {
+        "label" : "Header Button Scroll Target (Navigation name)",
+        "placeholder" : "Scrol to navigation Name"
+      }
+    },
+    "headerButtonCaption" : {
+      "type" : "Group",
+      "fieldset" : "Header Button Caption (English/German)",
+      "config" : {
+        "repeat" : false,
+        "fields" : {
+          "en" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "English"
+            }
+          },
+          "de" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "German"
+            }
+          }
+        }
+      }
+    },
+    "dropdownNavLinks" : {
+      "type" : "Group",
+      "fieldset" : "Additional Drop Down Links",
+      "config" : {
+        "repeat" : true,
+        "fields" : {
+          "link" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "Link"
+            }
+          },
+          "linkCaption-en" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "Link Caption English"
+            }
+          },
+          "linkCaption-de" : {
+            "type" : "Text",
+            "config" : {
+              "placeholder" : "Link Caption German"
+            }
+          }
+        }
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Content",
+      "config" : {
+        "choices" : {
+          "image-content-pair" : {
+            "type" : "Group",
+            "fieldset" : "Image with Text",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "image" : {
+                  "type" : "Image"
+                },
+                "navigationName-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Name English"
+                  }
+                },
+                "navigationName-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Name German"
+                  }
+                },
+                "content-en" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "placeholder" : "English"
+                  }
+                },
+                "content-de" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "placeholder" : "German"
+                  }
+                }
+              }
+            }
+          },
+          "gallery" : {
+            "type" : "Group",
+            "fieldset" : "Image Gallery",
+            "config" : {
+              "repeat" : true,
+              "fields" : {
+                "image" : {
+                  "type" : "Image"
+                },
+                "link" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Link"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading (German) only once"
+                  }
+                },
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading (English) only once"
+                  }
+                }
+              }
+            }
+          },
+          "blog-preview" : {
+            "type" : "Group",
+            "fieldset" : "Blog Preview",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "tag" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Tag"
+                  }
+                },
+                "number" : {
+                  "type" : "Number"
+                }
+              }
+            }
+          },
+          "blog-overview" : {
+            "type" : "Group",
+            "fieldset" : "Blog Overview",
+            "config" : {
+              "repeat" : false
+            }
+          },
+          "team" : {
+            "type" : "Group",
+            "fieldset" : "Team",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "navigationName-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label English"
+                  }
+                },
+                "navigationName-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label German"
+                  }
+                }
+              }
+            }
+          },
+          "products" : {
+            "type" : "Group",
+            "fieldset" : "Products",
+            "config" : {
+              "repeat" : false
+            }
+          },
+          "workflow" : {
+            "type" : "Group",
+            "fieldset" : "Onboarding Workflow",
+            "config" : {
+              "repeat" : true,
+              "fields" : {
+                "sectionHeading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Section Heading (only one) English"
+                  }
+                },
+                "sectionHeading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Section Heading (only one) German"
+                  }
+                },
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading English"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading German"
+                  }
+                },
+                "content-en" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "placeholder" : "Content English"
+                  }
+                },
+                "content-de" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "placeholder" : "Content German"
+                  }
+                }
+              }
+            }
+          },
+          "success-stories" : {
+            "type" : "Group",
+            "fieldset" : "Success Stories",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading English"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading German"
+                  }
+                },
+                "navigationName-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label English"
+                  }
+                },
+                "navigationName-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label German"
+                  }
+                }
+              }
+            }
+          },
+          "logos" : {
+            "type" : "Group",
+            "fieldset" : "Logos",
+            "config" : {
+              "repeat" : true,
+              "fields" : {
+                "image" : {
+                  "type" : "Image"
+                },
+                "link" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Link"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading (German) only once"
+                  }
+                },
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading (English) only once"
+                  }
+                }
+              }
+            }
+          },
+          "customer-contact-form" : {
+            "type" : "Group",
+            "fieldset" : "Customer Contact Form",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading English"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading German"
+                  }
+                },
+                "navigationName-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label English"
+                  }
+                },
+                "navigationName-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label German"
+                  }
+                },
+                "teamMember" : {
+                  "type" : "Link",
+                  "config" : {
+                    "select" : "document",
+                    "customtypes" : [ "team-member" ],
+                    "placeholder" : "Tea Member"
+                  }
+                }
+              }
+            }
+          },
+          "operator-contact-form" : {
+            "type" : "Group",
+            "fieldset" : "Operator Contact Form",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading English"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading German"
+                  }
+                },
+                "navigationName-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label English"
+                  }
+                },
+                "navigationName-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label German"
+                  }
+                },
+                "teamMember" : {
+                  "type" : "Link",
+                  "config" : {
+                    "select" : "document",
+                    "customtypes" : [ "team-member" ],
+                    "placeholder" : "Tea Member"
+                  }
+                }
+              }
+            }
+          },
+          "general-contact-form" : {
+            "type" : "Group",
+            "fieldset" : "General Contact Form",
+            "config" : {
+              "repeat" : false,
+              "fields" : {
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading English"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading German"
+                  }
+                },
+                "message-heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Success Message Heading English"
+                  }
+                },
+                "message-heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Success Message Heading German"
+                  }
+                },
+                "message-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Success Message English"
+                  }
+                },
+                "message-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Success Message German"
+                  }
+                },
+                "navigationName-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label English"
+                  }
+                },
+                "navigationName-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Navigation Label German"
+                  }
+                },
+                "teamMember" : {
+                  "type" : "Link",
+                  "config" : {
+                    "select" : "document",
+                    "customtypes" : [ "team-member" ],
+                    "placeholder" : "Tea Member"
+                  }
+                }
+              }
+            }
+          },
+          "traits" : {
+            "type" : "Group",
+            "fieldset" : "Traits",
+            "config" : {
+              "fields" : {
+                "icon" : {
+                  "type" : "Image"
+                },
+                "content-en" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "placeholder" : "Text English"
+                  }
+                },
+                "content-de" : {
+                  "type" : "StructuredText",
+                  "config" : {
+                    "placeholder" : "Text German"
+                  }
+                },
+                "heading-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading English"
+                  }
+                },
+                "heading-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Heading German"
+                  }
+                }
+              }
+            }
+          }
+            "press-releases" : {
+              "type" : "Group",
+              "fieldset" : "Press Releases",
+              "config" : {
+                "fields" : {
+                  "name-en" : {
+                    "type" : "Text",
+                    "config" : {
+                      "placeholder" : "Name English"
+                    }
+                  },
+                  "name-de" : {
+                    "type" : "Text",
+                    "config" : {
+                      "placeholder" : "Name German"
+                    }
+                  },
+                  "link-en" : {
+                    "type" : "Text",
+                    "config" : {
+                      "placeholder" : "Link English"
+                    }
+                  },
+                  "link-de" : {
+                    "type" : "Text",
+                    "config" : {
+                      "placeholder" : "Link German"
+                    }
+                  }
+                }
+              }
+            }
+        }
+      }
+    }
+  },
+  "Layout" : {
+    "order" : {
+      "type" : "Number",
+      "fieldset" : "Order"
+    }
+  }
+}

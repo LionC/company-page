@@ -23,20 +23,24 @@
             var interval = setInterval(rotateReferences, 5500)
 
             return function rotateReferences(reverse) {
-                var active = $('section.success-stories > div.shown').removeClass('shown').removeClass('fadeIn')
+                var active = $('section.success-stories > div.shown')
 
                 if(reverse)
                     var next = active.prev('div')
                 else
                     var next = active.next('div')
 
-                if(next && next.length > 0)
-                    next.addClass('shown')
-
-                if(reverse)
+                if(!next || next.length == 0)
+                    if(reverse)
                     active.siblings('div:last-of-type').addClass('shown').addClass('fadeIn')
-                else
+                    else
                     active.siblings('div:first-of-type').addClass('shown').addClass('fadeIn')
+
+                if(!next || next.length == 0)
+                    return
+
+                active.removeClass('shown').removeClass('fadeIn')
+                next.addClass('shown').addClass('fadeIn')
 
                 clearInterval(interval)
                 interval = setInterval(rotateReferences, 5500)

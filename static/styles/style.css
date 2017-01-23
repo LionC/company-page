@@ -427,6 +427,7 @@ header button {
     padding: 15px 20px;
 
     font-size: .8em;
+    color: white;
 }
 
 header {
@@ -775,6 +776,14 @@ section.blog-preview img {
     object-fit: cover;
 }
 
+section.blog-preview > div {
+    margin-top: 35px;
+}
+
+section.blog-preview > div > div > h2 > a {
+    text-decoration: none;
+}
+
 @media only screen and (min-width : 970px) {
     section.blog-preview > div {
         display: flex;
@@ -814,10 +823,6 @@ section.blog-preview img {
 
     section.blog-preview > div > div > h2 {
         margin-top: 0;
-    }
-
-    section.blog-preview > div > div > h2 > a {
-        text-decoration: none;
     }
 }
 
@@ -968,6 +973,7 @@ section.success-stories > div {
 section.success-stories > div.shown {
     display: flex;
 
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 
@@ -995,13 +1001,37 @@ section.success-stories > img {
     display: none;
 }
 
+section.success-stories > div {
+    text-align: center;
+}
+
+section.success-stories > div > img {
+    width: 55%;
+}
+
+section.success-stories > div > div > img {
+    width: 100%;
+}
+
+section.success-stories > div > div > blockquote {
+    margin: 0;
+}
+
 @media only screen and (min-width : 970px) {
+    section.success-stories > div.shown {
+        flex-direction: row;
+    }
+
     section.success-stories > img {
         display: block;
         position: absolute;
         top: 50%;
         height: 25px;
         cursor: pointer;
+    }
+
+    section.success-stories > div {
+        text-align: left;
     }
 
     section.success-stories > img:nth-of-type(1) {
@@ -1023,11 +1053,11 @@ section.success-stories > img {
 
     section.success-stories > div > div > img {
         height: 50px;
+        width: auto;
     }
 
     section.success-stories > div > div > blockquote {
         font-size: 1.5em;
-        margin: 0;
     }
 }
 
@@ -1045,7 +1075,7 @@ section.contact-form > form > label > input, section.contact-form > form > label
 section.contact-form > form button, header button {
     min-height: 55px;
 
-    background-color: #7ac6b8;
+    background-color: #5cb85c;
     vertical-align: middle;
     font-weight: 400;
 }
@@ -1112,6 +1142,31 @@ section.traits > div > img {
     section.traits > div {
         width: 30%;
     }
+}
+
+section.press-releases {
+    display: block;
+}
+
+section.press-releases > h2 {
+    text-align: center;
+}
+
+section.press-releases table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+section.press-releases table tr > td {
+    padding: 10px 3px;
+}
+
+section.press-releases table tr > td:last-of-type {
+    text-align: right;
+}
+
+section.press-releases table tr:not(:last-child) > td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 /*

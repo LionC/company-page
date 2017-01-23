@@ -89,10 +89,18 @@
     },
     "followUs": {
         "en": "Follow Us",
-        "de": "Folgen Sie Uns"
+        "de": "Folgen Sie uns"
     },
     "securePayment": {
         "en": "Secure Payment",
-        "de": "Sicher Bezahlen"
+        "de": "Sicher bezahlen"
+    },
+    "whatAreApartments": {
+        "en": "What Are Serviced Apartments?",
+        "de": "Was sind Serviced Apartments?"
+    },
+    "pressReleases": {
+        "en": "Press Releases",
+        "de": "Pressemitteilungen"
     }
 }

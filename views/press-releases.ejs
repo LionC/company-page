@@ -1,0 +1,22 @@
+<section class="press-releases">
+    <h2><%= __('pressReleases') %></h2>
+    <table>
+        <tbody>
+            <%
+            var releases = slice.value.toArray();
+            %>
+
+            <%
+            releases.forEach(function (release) {
+            %>
+            <tr>
+                <td><a href="<%= release.getText('link-' + lang) %>"><%= release.getText('name-' + lang) %></a></td>
+                <td><a href="<%= release.getText('link-' + lang) %>">Download</a></td>
+            </tr>
+            <%
+            });
+            %>
+
+        </tbody>
+    </table>
+</section>
