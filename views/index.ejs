@@ -145,7 +145,7 @@
                     <button onclick="scrollToId('<%- page.getText('page.headerButtonScrollTarget') %>')"><%= page.getGroup('page.headerButtonCaption').toArray()[0].getText(lang) %></button>
                     <script>
                     function scrollToId(id) {
-                        $('html, body').animate({ scrollTop: $('#' + id).offset().top + 55 },'slow')
+                        $('html, body').animate({ scrollTop: $('#' + id).offset().top - 75 },'slow')
                     }
                     </script>
                     <% } %>
