@@ -104,6 +104,7 @@ function render(req, res, params) {
         successStories: prismicData.successStories,
         languages: LANGUAGES,
         host: req.hostname,
+        query: req.query,
 
         languageLinks: buildLanguageLinks(req.path),
         buildAnchor: buildAnchor,

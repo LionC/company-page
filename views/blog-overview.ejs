@@ -1,6 +1,9 @@
 <section class="blog-preview">
     <h1>Blog</h1>
-    <% for(var i = 0; i < blog.length; i++) { var act = blog[i]; %>
+    <%
+    for(var i = 0; i < blog.length; i++) { var act = blog[i];
+        if ( !query.tag || act.tags.indexOf(query.tag) != -1 ) {
+    %>
     <div>
         <img src="<%= act.getImage('blog-post.previewImage').url %>" alt="<%= act.getImage('blog-post.previewImage').asText() %>">
         <div>
@@ -10,8 +13,29 @@
                 </a>
             </h2>
             <p><%= act.getStructuredText('blog-post.lead-' + lang).asText() %></p>
-            <a href="blog/<%= act.uid %>">Read more...</a>
+            <a href="blog/<%= act.uid %>"><%= __('readMore') %></a>
         </div>
     </div>
-    <% } %>
+    <%
+        }
+    }
+    %>
+
+    <aside>
+        <%
+        var tags = slice.value.toArray();
+        if ( tags && tags.length > 0 ) {
+        %>
+
+        <h3>Tags</h3>
+        <%
+            tags.forEach(function (tag) {
+        %>
+            <a href="blog?tag=<%= tag.getText('offeredTag') %>"><%= tag.getText('tagName-' + lang) %></a>
+        <%
+            });
+        }
+        %>
+    </aside>
+
 </section>

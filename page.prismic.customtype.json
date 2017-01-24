@@ -281,7 +281,27 @@
             "type" : "Group",
             "fieldset" : "Blog Overview",
             "config" : {
-              "repeat" : false
+              "repeat" : true,
+              "fields" : {
+                "offeredTag" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Tag for filtering"
+                  }
+                },
+                "tagName-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Tag Name English"
+                  }
+                },
+                "tagName-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Tag Name German"
+                  }
+                }
+              }
             }
           },
           "team" : {
@@ -601,39 +621,39 @@
                 }
               }
             }
-          }
-            "press-releases" : {
-              "type" : "Group",
-              "fieldset" : "Press Releases",
-              "config" : {
-                "fields" : {
-                  "name-en" : {
-                    "type" : "Text",
-                    "config" : {
-                      "placeholder" : "Name English"
-                    }
-                  },
-                  "name-de" : {
-                    "type" : "Text",
-                    "config" : {
-                      "placeholder" : "Name German"
-                    }
-                  },
-                  "link-en" : {
-                    "type" : "Text",
-                    "config" : {
-                      "placeholder" : "Link English"
-                    }
-                  },
-                  "link-de" : {
-                    "type" : "Text",
-                    "config" : {
-                      "placeholder" : "Link German"
-                    }
+          },
+          "press-releases" : {
+            "type" : "Group",
+            "fieldset" : "Press Releases",
+            "config" : {
+              "fields" : {
+                "name-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Name English"
+                  }
+                },
+                "name-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Name German"
+                  }
+                },
+                "link-en" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Link English"
+                  }
+                },
+                "link-de" : {
+                  "type" : "Text",
+                  "config" : {
+                    "placeholder" : "Link German"
                   }
                 }
               }
             }
+          }
         }
       }
     }

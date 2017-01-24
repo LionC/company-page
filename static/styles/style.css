@@ -764,6 +764,10 @@ section.blog-preview {
     flex-direction: column;
 }
 
+section.blog-preview > aside {
+    display: none;
+}
+
 section.blog-preview > h2 {
     margin-top: 0;
     text-align: center;
@@ -822,6 +826,28 @@ section.blog-preview > div > div > h2 > a {
 
     section.blog-preview > div > div > h2 {
         margin-top: 0;
+    }
+}
+
+@media only screen and (min-width : 1366px) {
+    section.blog-preview {
+        position: relative;
+    }
+
+    section.blog-preview > aside {
+        display: block;
+
+        text-align: right;
+
+        position: absolute;
+        top: 190px;
+        right: 24px;
+
+        font-size: 1.2em;
+    }
+
+    section.blog-preview > aside > a {
+        display: block;
     }
 }
 
