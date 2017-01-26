@@ -7,6 +7,7 @@
     <div>
         <img src="<%= act.getImage('blog-post.previewImage').url %>" alt="<%= act.getImage('blog-post.previewImage').asText() %>">
         <div>
+            <small><%= act.getDate('blog-post.date').toLocaleDateString() %></small><br>
             <h2>
                 <a href="blog/<%= act.uid %>">
                     <%= act.getText('blog-post.title-' + lang) %>
