@@ -18,6 +18,23 @@
 
     <base href="/<%= lang %>/">
 
+    <style>
+        header::before {
+            content: ' ';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url("<%= template == 'blog-post' ? blogPost.getImage('blog-post.previewImage').url : page.getImage('page.headerImage').url %>");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            will-change: transform;
+            z-index: -1;
+        }
+    </style>
+
     <script type="application/ld+json">
         <%- include('company-jsonld'); %>
     </script>
@@ -117,25 +134,9 @@
         <button class="icon-button" onclick="$('.nav-container').addClass('shown')"><img src="/assets/images/menu.png" alt="menu"></button>
     </nav>
 
-    <style>
-        header::before {
-            content: ' ';
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: url("<%= template == 'blog-post' ? blogPost.getImage('blog-post.previewImage').url : page.getImage('page.headerImage').url %>");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            will-change: transform;
-            z-index: -1;
-        }
-    </style>
-
+    <% if(template == 'blog-post' || !page.getBoolean('page.removeHeader')) { %>
     <header>
-        <div class="container">
+        <div class="container<% if(template == 'blog-post') { %> blog-post-heading<% } %>">
             <% if(template == 'blog-post') { %>
                 <h1><%= blogPost.getText('blog-post.title-' + lang) %></h1>
             <% } else { %>
@@ -153,6 +154,7 @@
 
         </div>
     </header>
+    <% } %>
 
     <main>
         <%- include(template); %>
