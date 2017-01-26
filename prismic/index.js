@@ -23,7 +23,8 @@ const types = {
     },
     'blog-post': {
         expKey: 'blog',
-        ordered: false
+        ordered: false,
+        customOrdering: '[my.blog-post.date desc]'
     },
     'page': {
         expKey: 'pages',
@@ -39,16 +40,22 @@ const types = {
     }
 };
 
-function fetchPage(page, type, ordered) {
+function fetchPage(page, type, ordered, customOrdering) {
     var config = {
         pageSize: 100,
         page: page
-    };
+    }
 
     if(ordered) {
         config.orderings = [
             "[my." + type + ".order]"
-        ];
+        ]
+    }
+
+    if(customOrdering) {
+        config.orderings = [
+            customOrdering
+        ]
     }
 
     return Prismic.api("https://aco-company-page.prismic.io/api").then(function(api) {
@@ -66,15 +73,15 @@ function fetchPage(page, type, ordered) {
     });
 }
 
-function fetchDocuments(type, ordered) {
-    return fetchPage(1, type, ordered);
+function fetchDocuments(type, ordered, customOrdering) {
+    return fetchPage(1, type, ordered, customOrdering);
 }
 
 function fetchData() {
     var promises = [];
 
     for(var type in types)
-        promises.push(fetchDocuments(type, types[type].ordered));
+        promises.push(fetchDocuments(type, types[type].ordered, types[type].customOrdering));
 
     return Promise.all(promises);
 }

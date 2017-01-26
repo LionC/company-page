@@ -807,20 +807,20 @@ section.blog-preview > div > div > h2 > a {
     }
 
     section.blog-preview > div > div {
-        width: 500px;
+        width: 530px;
     }
 
     section.blog-preview > div > img {
         display: block;
-        width: 300px;
-        height: 200px;
+        width: 400px;
+        height: 280px;
 
         margin-left: 0;
-        margin-right: 20px;
+        margin-right: 40px;
     }
 
     section.blog-preview > div:nth-child(2n+1) > img {
-        margin-left: 20px;
+        margin-left: 40px;
         margin-right: 0;
     }
 
