@@ -143,7 +143,7 @@
                 <%- page.getGroup('page.headerText').toArray()[0].getStructuredText(lang).asHtml() %>
 
                 <%
-                
+
                 if(page.getBoolean('page.headerHasButton')) {
                 %>
                     <button onclick="scrollToId('<%- page.getText('page.headerButtonScrollTarget') %>')"><%= page.getGroup('page.headerButtonCaption').toArray()[0].getText(lang) %></button>
@@ -181,9 +181,9 @@
         </div>
         <div>
             <h5><%= __('legal') %></h5>
-            <a href="impress"><%= __('impress') %></a>
-            <a href="terms"><%= __('agb') %></a>
-            <a href="privacy"><%= __('privacy') %></a>
+            <a href="imprint"><%= __('impress') %></a>
+            <a href="terms-and-conditions"><%= __('agb') %></a>
+            <a href="privacy-policy"><%= __('privacy') %></a>
         </div>
         <div>
             <h5><%= __('followUs') %></h5>

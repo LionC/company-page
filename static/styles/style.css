@@ -801,8 +801,20 @@ section.blog-preview > div > div > h2 > a, section.blog-overview > div > div > h
     text-decoration: none;
 }
 
+section.blog-overview aside {
+    margin-top: 21px;
+}
+
+section.blog-overview aside a {
+    margin-left: 9px;
+    background-color: #ddd;
+    padding: 7px;
+    text-decoration: none;
+    border-radius: 12px;
+}
+
 section.blog-overview aside a.chosen {
-    color: #f9b000;
+    background-color: #bcb7c4;
 }
 
 @media only screen and (min-width : 970px) {
