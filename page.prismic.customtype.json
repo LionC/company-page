@@ -661,6 +661,26 @@
                 }
               }
             }
+          },
+          "text": {
+              "type": "Group",
+              "config": {
+                  "repeat": false,
+                  "fields": {
+                    "content-en": {
+                      "type": "StructuredText",
+                        "config" : {
+                          "placeholder" : "Text English"
+                        }
+                    },
+                    "content-de": {
+                      "type": "StructuredText",
+                        "config" : {
+                          "placeholder" : "Text German"
+                        }
+                   }
+                 }
+              }
           }
         }
       }

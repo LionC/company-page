@@ -564,22 +564,17 @@ body > footer > img + img {
         flex-direction: row;
     }
 
-    body > footer > div + div {
-        margin-left: 40px;
+    body > footer > div {
+        width: 242px;
     }
 
-    body > footer > img {
-        align-self: center;
-
-        width: 80px;
+    body > footer > div > img {
+        margin-top: 25px;
+        width: 90px;
     }
 
-    body > footer > img:not(:first-child) {
-        margin-left: 40px;
-    }
-
-    body > footer > img:first-of-type:not(:first-child) {
-        margin-left: auto;
+    body > footer > div > img + img {
+        margin-left: 20px;
     }
 }
 

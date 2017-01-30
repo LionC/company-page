@@ -8,8 +8,6 @@
 
     <%- include(headTemplate); %>
 
-    <!-- TODO Favicon -->
-
     <link href="https://fonts.googleapis.com/css?family=Lato:400,300,700" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="/styles/style.css">
@@ -18,6 +16,7 @@
 
     <base href="/<%= lang %>/">
 
+    <% if(template == 'blog-post' || !page.getBoolean('page.removeHeader')) { %>
     <style>
         header::before {
             content: ' ';
@@ -34,6 +33,7 @@
             z-index: -1;
         }
     </style>
+    <% } %>
 
     <script type="application/ld+json">
         <%- include('company-jsonld'); %>
@@ -163,8 +163,11 @@
     <footer>
         <div>
             <h5>Acomodeo</h5>
+            <!--
             <a href="for-operators"><%= __('forOperators') %></a>
             <a href="for-customers"><%= __('forCustomers') %></a>
+            -->
+            <a href="https://acomodeo.com">Acomodeo.com</a>
             <a href="https://acomodeo.has-jobs.com">Jobs</a>
             <a href="securitysustainability"><%= __('securitySustainability') %></a>
             <a href="what-are-serviced-apartments"><%= __('whatAreApartments') %></a>
@@ -189,9 +192,9 @@
             <div><img src="/assets/images/amex.png" alt="AMEX"> American Express</div>
             <div><img src="/assets/images/mastercard.png" alt="Mastercard"> MasterCard</div>
             <div><img src="/assets/images/visa.png" alt="Visa"> VISA</div>
+            <img src="/assets/images/pci.png" alt="PCI Certificate">
+            <img src="/assets/images/renewable.png" alt="ECO Certificate">
         </div>
-        <img src="/assets/images/pci.png" alt="PCI Certificate">
-        <img src="/assets/images/renewable.png" alt="ECO Certificate">
     </footer>
 
     <script>
