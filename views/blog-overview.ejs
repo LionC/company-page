@@ -1,5 +1,25 @@
 <section class="blog-overview">
     <h1>Blog</h1>
+
+    <aside>
+        <%
+        var tags = slice.value.toArray();
+        if ( tags && tags.length > 0 ) {
+            %>
+
+            <b><%= __('categories') %>:</b>
+            <%
+            tags.forEach(function (tag) {
+                %>
+                <a
+                    <% if(query.tag && query.tag == tag.getText('offeredTag')) { %>class="chosen"<% } %>
+                    href="blog?tag=<%= tag.getText('offeredTag') %>"><%= tag.getText('tagName-' + lang) %></a>
+                <%
+            });
+        }
+        %>
+    </aside>
+
     <%
     for(var i = 0; i < blog.length; i++) { var act = blog[i];
         if ( !query.tag || act.tags.indexOf(query.tag) != -1 ) {
@@ -22,21 +42,5 @@
     }
     %>
 
-    <aside>
-        <%
-        var tags = slice.value.toArray();
-        if ( tags && tags.length > 0 ) {
-        %>
-
-        <h3>Tags</h3>
-        <%
-            tags.forEach(function (tag) {
-        %>
-            <a href="blog?tag=<%= tag.getText('offeredTag') %>"><%= tag.getText('tagName-' + lang) %></a>
-        <%
-            });
-        }
-        %>
-    </aside>
 
 </section>

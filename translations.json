@@ -106,5 +106,9 @@
     "readMore": {
         "en": "Read more...",
         "de": "Weiterlesen..."
+    },
+    "categories": {
+        "en": "Categories",
+        "de": "Kategorien"
     }
 }

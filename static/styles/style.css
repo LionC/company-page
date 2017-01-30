@@ -653,6 +653,8 @@ section.logos {
 section.logos > a, section.logos > img {
     display: block;
     width: 50%;
+
+    margin-top: 30px;
 }
 
 section.logos > a > img {
@@ -780,10 +782,6 @@ section.blog-preview, section.blog-overview {
     flex-direction: column;
 }
 
-section.blog-preview > aside, section.blog-overview > aside {
-    display: none;
-}
-
 section.blog-preview > h2, section.blog-overview > h2 {
     margin-top: 0;
     text-align: center;
@@ -801,6 +799,10 @@ section.blog-preview > div, section.blog-overview > div {
 
 section.blog-preview > div > div > h2 > a, section.blog-overview > div > div > h2 > a {
     text-decoration: none;
+}
+
+section.blog-overview aside a.chosen {
+    color: #f9b000;
 }
 
 @media only screen and (min-width : 970px) {
@@ -848,22 +850,6 @@ section.blog-preview > div > div > h2 > a, section.blog-overview > div > div > h
 @media only screen and (min-width : 1366px) {
     section.blog-overview {
         position: relative;
-    }
-
-    section.blog-overview > aside {
-        display: block;
-
-        text-align: right;
-
-        position: absolute;
-        top: 190px;
-        right: 24px;
-
-        font-size: 1.2em;
-    }
-
-    section.blog-overview > aside > a {
-        display: block;
     }
 }
 
