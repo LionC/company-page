@@ -100,13 +100,13 @@
     }
   },
   "Content" : {
-    "removeHeader": {
-        "type" : "Select",
-        "config" : {
-          "label" : "Remove Hero Banner",
-          "options" : [ "yes", "no" ],
-          "placeholder" : "no"
-        }
+    "removeHeader" : {
+      "type" : "Select",
+      "config" : {
+        "label" : "Remove Hero Banner",
+        "options" : [ "yes", "no" ],
+        "placeholder" : "no"
+      }
     },
     "headerImage" : {
       "type" : "Image",
